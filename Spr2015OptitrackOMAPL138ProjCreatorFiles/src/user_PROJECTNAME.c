@@ -590,8 +590,13 @@ pose UpdateOptitrackStates(pose localROBOTps, int * flag) {
 		if ((Optitrackdata[0] != 0.0) && (Optitrackdata[1] != 0.0) && (Optitrackdata[2] != 0.0)) {
 			// save x,y
 			// adding 2.5 so everything is shifted such that optitrack's origin is the center of the arena (while keeping all coordinates positive)
-			localOPTITRACKps.x = Optitrackdata[0]*FEETINONEMETER; // was 2.5 for size = 5
-			localOPTITRACKps.y = -1.0*Optitrackdata[1]*FEETINONEMETER+4.0;
+			// This was the old way for Optitrack coordinates
+			//localOPTITRACKps.x = Optitrackdata[0]*FEETINONEMETER; // was 2.5 for size = 5
+			//localOPTITRACKps.y = -1.0*Optitrackdata[1]*FEETINONEMETER+4.0;
+
+			// This is the new coordinates for Motive
+			localOPTITRACKps.x = -1.0*Optitrackdata[0]*FEETINONEMETER; 
+			localOPTITRACKps.y = Optitrackdata[1]*FEETINONEMETER+4.0;
 
 			// make this a function
 			temp_theta = fmodf(localROBOTps.theta,(float)(2*PI));//(theta[trackableID]%(2*PI));

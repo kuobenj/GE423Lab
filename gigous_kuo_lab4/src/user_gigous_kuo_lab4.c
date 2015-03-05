@@ -249,6 +249,9 @@ void control(void) {
 	float_adc_B1 = (raw_adc_B1/4095.0)*3.0;
 	float_adc_B2 = (raw_adc_B2/4095.0)*3.0;
 
+	F28335_Extra1 = float_adc_B1;
+	F28335_Extra2 = float_adc_B2;
+
 	float dac_adc_B1 = 0;
 	float dac_adc_B2 = 0;
 
@@ -276,7 +279,8 @@ void control(void) {
 		y[0] -= a[i]*y[i];
 	}
 
-	writeDAC7564(y[0], dac_adc_B2);
+	//writeDAC7564(y[0], dac_adc_B2);
+	writeDAC7564(omap_dac1, omap_dac2);
 
 	for ( i=7; i>0; i-- )
 	{

@@ -1,10 +1,10 @@
 ******************************************************************************
              TMS320C2000 Linker PC v6.2.7                      
 ******************************************************************************
->> Linked Thu Feb 19 17:42:14 2015
+>> Linked Thu Feb 26 16:50:56 2015
 
 OUTPUT FILE NAME:   <gigous_kuo_lab4.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: 00303d39
+ENTRY POINT SYMBOL: "_c_int00"  address: 00303d49
 
 
 MEMORY CONFIGURATION
@@ -13,7 +13,7 @@ MEMORY CONFIGURATION
 ----------------------  --------  ---------  --------  --------  ----  --------
 PAGE 0:
   BEGIN_M0              00000000   00000002  00000000  00000002  RWIX
-  FLASH_BCD             00300000   00038000  00003e4f  000341b1  RWIX
+  FLASH_BCD             00300000   00038000  00003e5f  000341a1  RWIX
   FLASH_A               00338000   00007f80  00000000  00007f80  RWIX
   CSM_RSVD              0033ff80   00000076  00000076  00000000  RWIX
   BEGIN_FLASH           0033fff6   00000002  00000002  00000000  RWIX
@@ -104,181 +104,181 @@ ramfuncs   0    00300100    0000026e     RUN ADDR = 00008000
                   0030034f    0000001b     DSP2833x_SysCtrl.obj (ramfuncs)
                   0030036a    00000004     DSP2833x_usDelay.obj (ramfuncs)
 
-.text      0    0030036e    00001e1f     
+.text      0    0030036e    00001e2f     
                   0030036e    00000655     28335_pwm.obj (.text)
                   003009c3    000003c8     28335_spi.obj (.text)
-                  00300d8b    0000035f     user_gigous_kuo_lab4.obj (.text)
-                  003010ea    00000345     i2c.obj (.text)
-                  0030142f    000002f0     smallprintf.obj (.text)
-                  0030171f    00000244     28335_serial.obj (.text)
-                  00301963    00000172     DSP2833x_Mcbsp.obj (.text)
-                  00301ad5    00000142     28335_mcbsp.obj (.text)
-                  00301c17    000000f2     DSP2833x_SysCtrl.obj (.text)
-                  00301d09    000000b3     28335_eqep.obj (.text)
-                  00301dbc    00000090     28335_dma.obj (.text)
-                  00301e4c    00000088     rts2800_fpu32.lib : fs_div.obj (.text)
-                  00301ed4    0000007d     28335_inits.obj (.text)
-                  00301f51    0000006a     coecsl.obj (.text)
-                  00301fbb    00000031     rts2800_fpu32.lib : atoi.obj (.text)
-                  00301fec    0000002c                       : ltoa.obj (.text)
-                  00302018    0000002a     DSP2833x_Spi.obj (.text)
-                  00302042    0000002a     rts2800_fpu32.lib : l_div.obj (.text)
-                  0030206c    00000028     DSP2833x_PieCtrl.obj (.text)
-                  00302094    00000027     rts2800_fpu32.lib : sinit.obj (.text)
-                  003020bb    00000026                       : atexit.obj (.text)
-                  003020e1    00000021                       : memcpy_ff.obj (.text)
-                  00302102    0000001f     bios.a28FP : tsk_stup.o28FP (.text:_lock2)
-                  00302121    0000001a     rts2800_fpu32.lib : modf.obj (.text)
-                  0030213b    00000014     DSP2833x_Adc.obj (.text)
-                  0030214f    0000000c     rts2800_fpu32.lib : strchr.obj (.text)
-                  0030215b    00000009     rtdxfp.lib : intr_tgt.o28FP (.text:_RTDX_Mask_IER)
-                  00302164    00000009     rts2800_fpu32.lib : _lock.obj (.text)
-                  0030216d    00000008     DSP2833x_CodeStartBranch.obj (.text)
-                  00302175    00000008     rts2800_fpu32.lib : strlen.obj (.text)
-                  0030217d    00000006     rtdxfp.lib : intr_tgt.o28FP (.text:_RTDX_Set_IER)
-                  00302183    00000005     bios.a28FP : tsk_stup.o28FP (.text:_unlock2)
-                  00302188    00000005     rts2800_fpu32.lib : strcpy.obj (.text)
+                  00300d8b    0000036f     user_gigous_kuo_lab4.obj (.text)
+                  003010fa    00000345     i2c.obj (.text)
+                  0030143f    000002f0     smallprintf.obj (.text)
+                  0030172f    00000244     28335_serial.obj (.text)
+                  00301973    00000172     DSP2833x_Mcbsp.obj (.text)
+                  00301ae5    00000142     28335_mcbsp.obj (.text)
+                  00301c27    000000f2     DSP2833x_SysCtrl.obj (.text)
+                  00301d19    000000b3     28335_eqep.obj (.text)
+                  00301dcc    00000090     28335_dma.obj (.text)
+                  00301e5c    00000088     rts2800_fpu32.lib : fs_div.obj (.text)
+                  00301ee4    0000007d     28335_inits.obj (.text)
+                  00301f61    0000006a     coecsl.obj (.text)
+                  00301fcb    00000031     rts2800_fpu32.lib : atoi.obj (.text)
+                  00301ffc    0000002c                       : ltoa.obj (.text)
+                  00302028    0000002a     DSP2833x_Spi.obj (.text)
+                  00302052    0000002a     rts2800_fpu32.lib : l_div.obj (.text)
+                  0030207c    00000028     DSP2833x_PieCtrl.obj (.text)
+                  003020a4    00000027     rts2800_fpu32.lib : sinit.obj (.text)
+                  003020cb    00000026                       : atexit.obj (.text)
+                  003020f1    00000021                       : memcpy_ff.obj (.text)
+                  00302112    0000001f     bios.a28FP : tsk_stup.o28FP (.text:_lock2)
+                  00302131    0000001a     rts2800_fpu32.lib : modf.obj (.text)
+                  0030214b    00000014     DSP2833x_Adc.obj (.text)
+                  0030215f    0000000c     rts2800_fpu32.lib : strchr.obj (.text)
+                  0030216b    00000009     rtdxfp.lib : intr_tgt.o28FP (.text:_RTDX_Mask_IER)
+                  00302174    00000009     rts2800_fpu32.lib : _lock.obj (.text)
+                  0030217d    00000008     DSP2833x_CodeStartBranch.obj (.text)
+                  00302185    00000008     rts2800_fpu32.lib : strlen.obj (.text)
+                  0030218d    00000006     rtdxfp.lib : intr_tgt.o28FP (.text:_RTDX_Set_IER)
+                  00302193    00000005     bios.a28FP : tsk_stup.o28FP (.text:_unlock2)
+                  00302198    00000005     rts2800_fpu32.lib : strcpy.obj (.text)
 
-.bios      0    0030218d    00000db4     
-                  0030218d    0000017d     bios.a28FP : swi.o28FP (.bios)
-                  0030230a    0000015e     lnkrtdx.a28FP : rtdx.o28FP (.bios)
-                  00302468    00000129     bios.a28FP : hwi_disp_asm.o28FP (.bios)
-                  00302591    0000009e                : clk_run.o28FP (.bios)
-                  0030262f    0000009c                : rtdx_isr.o28FP (.bios)
-                  003026cb    00000097                : prd.o28FP (.bios)
-                  00302762    00000097                : rta.o28FP (.bios)
-                  003027f9    00000093                : sem_pend.o28FP (.bios:_SEM_pendEnterKnl)
-                  0030288c    0000008d                : mem_allo.o28FP (.bios:.near:_MEM_alloc)
-                  00302919    00000088                : knl_run.o28FP (.bios:_KNL_run)
-                  003029a1    00000077                : knl_tick.o28FP (.bios:__KNL_doTick)
-                  00302a18    0000006d                : tsk_setu.o28FP (.bios:_TSK_setup)
-                  00302a85    00000063                : tsk_exit.o28FP (.bios:_TSK_exit)
-                  00302ae8    00000063                : sem_dopo.o28FP (.bios:__SEM_dopost)
-                  00302b4b    00000060                : pip.o28FP (.bios)
-                  00302bab    00000041                : knl_swit.o28FP (.bios)
-                  00302bec    00000035                : clk.o28FP (.bios)
-                  00302c21    00000034                : sem_post_asm.o28FP (.bios)
-                  00302c55    00000033                : knl_chec.o28FP (.bios)
-                  00302c88    00000032                : idl_cal.o28FP (.bios)
-                  00302cba    00000028                : tsk_stup.o28FP (.bios:_TSK_startup)
-                  00302ce2    00000028                : clk_isr.o28FP (.bios)
-                  00302d0a    00000023                : sem_post.o28FP (.bios:_SEM_postEnterKnl)
-                  00302d2d    00000022                : knl_ipos.o28FP (.bios:_KNL_ipost)
-                  00302d4f    00000021                : sys_exit.o28FP (.bios:_SYS_exit)
-                  00302d70    00000020                : sts.o28FP (.bios)
-                  00302d90    0000001f                : knl_exit.o28FP (.bios:_KNL_enter)
-                  00302daf    0000001f                : tsk_stup.o28FP (.bios:_lock)
-                  00302dce    0000001f                : sem_pend_counting.o28FP (.bios)
-                  00302ded    0000001e                : log.o28FP (.bios)
-                  00302e0b    0000001c                : lck.o28FP (.bios:_LCK_pend)
-                  00302e27    0000001a                : tsk_yiel.o28FP (.bios:_TSK_yield)
-                  00302e41    0000001a                : idl_busy.o28FP (.bios)
-                  00302e5b    00000016                : knl_post.o28FP (.bios:_KNL_post)
-                  00302e71    00000014                : rta_andn.o28FP (.bios)
-                  00302e85    00000012                : fxn.o28FP (.bios)
-                  00302e97    00000012                : que_get.o28FP (.bios)
-                  00302ea9    00000011                : tsk_yiel.o28FP (.bios:__TSK_doYield)
-                  00302eba    00000010                : utl_doab.o28FP (.bios:_UTL_doAbort)
-                  00302eca    00000010                : utl_doer.o28FP (.bios:_UTL_doError)
-                  00302eda    0000000e                : lck.o28FP (.bios:_LCK_post)
-                  00302ee8    0000000c                : knl_exit.o28FP (.bios:_KNL_exit)
-                  00302ef4    0000000c                : utl_putc.o28FP (.bios:_UTL_doPutc)
-                  00302f00    0000000a                : hwi_c.o28FP (.bios)
-                  00302f0a    00000009                : sys_erro.o28FP (.bios:.near:_SYS_error)
-                  00302f13    00000009                : sys_abor.o28FP (.bios:_SYS_abort)
-                  00302f1c    00000009                : idl_stub.o28FP (.bios)
-                  00302f25    00000006                : idl.o28FP (.bios)
-                  00302f2b    00000005                : knl_tick.o28FP (.bios:_KNL_tick)
-                  00302f30    00000005                : tsk_stup.o28FP (.bios:_unlock)
-                  00302f35    00000005                : log_event.o28FP (.bios)
-                  00302f3a    00000003                : utl_halt.o28FP (.bios:_UTL_halt)
-                  00302f3d    00000003                : gbl_vers.o28FP (.bios)
-                  00302f40    00000001                : fxn_c.o28FP (.bios:_FXN_F_nop)
+.bios      0    0030219d    00000db4     
+                  0030219d    0000017d     bios.a28FP : swi.o28FP (.bios)
+                  0030231a    0000015e     lnkrtdx.a28FP : rtdx.o28FP (.bios)
+                  00302478    00000129     bios.a28FP : hwi_disp_asm.o28FP (.bios)
+                  003025a1    0000009e                : clk_run.o28FP (.bios)
+                  0030263f    0000009c                : rtdx_isr.o28FP (.bios)
+                  003026db    00000097                : prd.o28FP (.bios)
+                  00302772    00000097                : rta.o28FP (.bios)
+                  00302809    00000093                : sem_pend.o28FP (.bios:_SEM_pendEnterKnl)
+                  0030289c    0000008d                : mem_allo.o28FP (.bios:.near:_MEM_alloc)
+                  00302929    00000088                : knl_run.o28FP (.bios:_KNL_run)
+                  003029b1    00000077                : knl_tick.o28FP (.bios:__KNL_doTick)
+                  00302a28    0000006d                : tsk_setu.o28FP (.bios:_TSK_setup)
+                  00302a95    00000063                : tsk_exit.o28FP (.bios:_TSK_exit)
+                  00302af8    00000063                : sem_dopo.o28FP (.bios:__SEM_dopost)
+                  00302b5b    00000060                : pip.o28FP (.bios)
+                  00302bbb    00000041                : knl_swit.o28FP (.bios)
+                  00302bfc    00000035                : clk.o28FP (.bios)
+                  00302c31    00000034                : sem_post_asm.o28FP (.bios)
+                  00302c65    00000033                : knl_chec.o28FP (.bios)
+                  00302c98    00000032                : idl_cal.o28FP (.bios)
+                  00302cca    00000028                : tsk_stup.o28FP (.bios:_TSK_startup)
+                  00302cf2    00000028                : clk_isr.o28FP (.bios)
+                  00302d1a    00000023                : sem_post.o28FP (.bios:_SEM_postEnterKnl)
+                  00302d3d    00000022                : knl_ipos.o28FP (.bios:_KNL_ipost)
+                  00302d5f    00000021                : sys_exit.o28FP (.bios:_SYS_exit)
+                  00302d80    00000020                : sts.o28FP (.bios)
+                  00302da0    0000001f                : knl_exit.o28FP (.bios:_KNL_enter)
+                  00302dbf    0000001f                : tsk_stup.o28FP (.bios:_lock)
+                  00302dde    0000001f                : sem_pend_counting.o28FP (.bios)
+                  00302dfd    0000001e                : log.o28FP (.bios)
+                  00302e1b    0000001c                : lck.o28FP (.bios:_LCK_pend)
+                  00302e37    0000001a                : tsk_yiel.o28FP (.bios:_TSK_yield)
+                  00302e51    0000001a                : idl_busy.o28FP (.bios)
+                  00302e6b    00000016                : knl_post.o28FP (.bios:_KNL_post)
+                  00302e81    00000014                : rta_andn.o28FP (.bios)
+                  00302e95    00000012                : fxn.o28FP (.bios)
+                  00302ea7    00000012                : que_get.o28FP (.bios)
+                  00302eb9    00000011                : tsk_yiel.o28FP (.bios:__TSK_doYield)
+                  00302eca    00000010                : utl_doab.o28FP (.bios:_UTL_doAbort)
+                  00302eda    00000010                : utl_doer.o28FP (.bios:_UTL_doError)
+                  00302eea    0000000e                : lck.o28FP (.bios:_LCK_post)
+                  00302ef8    0000000c                : knl_exit.o28FP (.bios:_KNL_exit)
+                  00302f04    0000000c                : utl_putc.o28FP (.bios:_UTL_doPutc)
+                  00302f10    0000000a                : hwi_c.o28FP (.bios)
+                  00302f1a    00000009                : sys_erro.o28FP (.bios:.near:_SYS_error)
+                  00302f23    00000009                : sys_abor.o28FP (.bios:_SYS_abort)
+                  00302f2c    00000009                : idl_stub.o28FP (.bios)
+                  00302f35    00000006                : idl.o28FP (.bios)
+                  00302f3b    00000005                : knl_tick.o28FP (.bios:_KNL_tick)
+                  00302f40    00000005                : tsk_stup.o28FP (.bios:_unlock)
+                  00302f45    00000005                : log_event.o28FP (.bios)
+                  00302f4a    00000003                : utl_halt.o28FP (.bios:_UTL_halt)
+                  00302f4d    00000003                : gbl_vers.o28FP (.bios)
+                  00302f50    00000001                : fxn_c.o28FP (.bios:_FXN_F_nop)
 
-.cinit     0    00302f41    00000856     
-                  00302f41    000003d6     gigous_kuo_lab4cfg.obj (.cinit)
-                  00303317    0000016e     user_gigous_kuo_lab4.obj (.cinit)
-                  00303485    000000a5     bios.a28FP : biosdata.o28FP (.cinit)
-                  0030352a    000000a0                : knl.o28FP (.cinit)
-                  003035ca    00000065     i2c.obj (.cinit)
-                  0030362f    0000003c     28335_mcbsp.obj (.cinit)
-                  0030366b    0000002e     bios.a28FP : tsk_stup.o28FP (.cinit)
-                  00303699    0000002c                : tsk.o28FP (.cinit)
-                  003036c5    00000024     28335_spi.obj (.cinit)
-                  003036e9    00000019     bios.a28FP : rta.o28FP (.cinit)
-                  00303702    00000017     rtdxfp.lib : buffer1.o28FP (.cinit)
-                  00303719    0000000f     bios.a28FP : utl_putc.o28FP (.cinit)
-                  00303728    0000000c     28335_pwm.obj (.cinit)
-                  00303734    0000000b     bios.a28FP : knl_tick.o28FP (.cinit)
-                  0030373f    0000000b                : tsk_yiel.o28FP (.cinit)
-                  0030374a    0000000a                : sys.o28FP (.cinit)
-                  00303754    0000000a     rts2800_fpu32.lib : _lock.obj (.cinit)
-                  0030375e    0000000a                       : exit.obj (.cinit)
-                  00303768    00000009     lnkrtdx.a28FP : rtdx.o28FP (.cinit)
-                  00303771    00000008     28335_inits.obj (.cinit)
-                  00303779    00000008     rts2800_fpu32.lib : atexit.obj (.cinit)
-                  00303781    00000005     bios.a28FP : idl_busy.o28FP (.cinit)
-                  00303786    00000005                : knl_swit.o28FP (.cinit)
-                  0030378b    00000005     lcd.obj (.cinit)
-                  00303790    00000005     rts2800_fpu32.lib : sinit.obj (.cinit)
-                  00303795    00000002     --HOLE-- [fill = 0]
+.cinit     0    00302f51    00000856     
+                  00302f51    000003d6     gigous_kuo_lab4cfg.obj (.cinit)
+                  00303327    0000016e     user_gigous_kuo_lab4.obj (.cinit)
+                  00303495    000000a5     bios.a28FP : biosdata.o28FP (.cinit)
+                  0030353a    000000a0                : knl.o28FP (.cinit)
+                  003035da    00000065     i2c.obj (.cinit)
+                  0030363f    0000003c     28335_mcbsp.obj (.cinit)
+                  0030367b    0000002e     bios.a28FP : tsk_stup.o28FP (.cinit)
+                  003036a9    0000002c                : tsk.o28FP (.cinit)
+                  003036d5    00000024     28335_spi.obj (.cinit)
+                  003036f9    00000019     bios.a28FP : rta.o28FP (.cinit)
+                  00303712    00000017     rtdxfp.lib : buffer1.o28FP (.cinit)
+                  00303729    0000000f     bios.a28FP : utl_putc.o28FP (.cinit)
+                  00303738    0000000c     28335_pwm.obj (.cinit)
+                  00303744    0000000b     bios.a28FP : knl_tick.o28FP (.cinit)
+                  0030374f    0000000b                : tsk_yiel.o28FP (.cinit)
+                  0030375a    0000000a                : sys.o28FP (.cinit)
+                  00303764    0000000a     rts2800_fpu32.lib : _lock.obj (.cinit)
+                  0030376e    0000000a                       : exit.obj (.cinit)
+                  00303778    00000009     lnkrtdx.a28FP : rtdx.o28FP (.cinit)
+                  00303781    00000008     28335_inits.obj (.cinit)
+                  00303789    00000008     rts2800_fpu32.lib : atexit.obj (.cinit)
+                  00303791    00000005     bios.a28FP : idl_busy.o28FP (.cinit)
+                  00303796    00000005                : knl_swit.o28FP (.cinit)
+                  0030379b    00000005     lcd.obj (.cinit)
+                  003037a0    00000005     rts2800_fpu32.lib : sinit.obj (.cinit)
+                  003037a5    00000002     --HOLE-- [fill = 0]
 
 .rtdx_text 
-*          0    00303797    00000312     
-                  00303797    000000cd     rtdxfp.lib : buffer1.o28FP (.rtdx_text:_RTDX_write_next)
-                  00303864    0000009d                : buffer1.o28FP (.rtdx_text:_RTDX_Buffer_WriteCB)
-                  00303901    00000053                : rtdx_mon.o28FP (.rtdx_text:_RTDX_Poll)
-                  00303954    00000046                : rtdx_mon.o28FP (.rtdx_text:_StartXFer)
-                  0030399a    00000042                : buffer1.o28FP (.rtdx_text:_claim)
-                  003039dc    00000037                : rtdx_mon.o28FP (.rtdx_text:_RTDX_Mon_Queue)
-                  00303a13    00000030                : rtdx_mon.o28FP (.rtdx_text:_RTDX_Init_RT_Monitor)
-                  00303a43    00000017                : buffer1.o28FP (.rtdx_text:_RTDX_Buffer_Initialize)
-                  00303a5a    00000014                : buffer2.o28FP (.rtdx_text:_RTDX_Buffer_ReadCB)
-                  00303a6e    0000000d                : rtdx_mon.o28FP (.rtdx_text:_RTDX_Final_RT_Monitor)
-                  00303a7b    0000000c                : buffer1.o28FP (.rtdx_text:_RTDX_Buffer_Size)
-                  00303a87    00000009                : rtdx_mon.o28FP (.rtdx_text:_Allow_EmuAccess)
-                  00303a90    00000009                : buffer2.o28FP (.rtdx_text:_RTDX_Buffer_Read)
-                  00303a99    00000007                : buffer1.o28FP (.rtdx_text:_RTDX_Buffer_Write)
-                  00303aa0    00000006                : rtdx_mon.o28FP (.rtdx_text:_Wait)
-                  00303aa6    00000003                : rtdx_mon.o28FP (.rtdx_text:_Disallow_EmuAccess)
+*          0    003037a7    00000312     
+                  003037a7    000000cd     rtdxfp.lib : buffer1.o28FP (.rtdx_text:_RTDX_write_next)
+                  00303874    0000009d                : buffer1.o28FP (.rtdx_text:_RTDX_Buffer_WriteCB)
+                  00303911    00000053                : rtdx_mon.o28FP (.rtdx_text:_RTDX_Poll)
+                  00303964    00000046                : rtdx_mon.o28FP (.rtdx_text:_StartXFer)
+                  003039aa    00000042                : buffer1.o28FP (.rtdx_text:_claim)
+                  003039ec    00000037                : rtdx_mon.o28FP (.rtdx_text:_RTDX_Mon_Queue)
+                  00303a23    00000030                : rtdx_mon.o28FP (.rtdx_text:_RTDX_Init_RT_Monitor)
+                  00303a53    00000017                : buffer1.o28FP (.rtdx_text:_RTDX_Buffer_Initialize)
+                  00303a6a    00000014                : buffer2.o28FP (.rtdx_text:_RTDX_Buffer_ReadCB)
+                  00303a7e    0000000d                : rtdx_mon.o28FP (.rtdx_text:_RTDX_Final_RT_Monitor)
+                  00303a8b    0000000c                : buffer1.o28FP (.rtdx_text:_RTDX_Buffer_Size)
+                  00303a97    00000009                : rtdx_mon.o28FP (.rtdx_text:_Allow_EmuAccess)
+                  00303aa0    00000009                : buffer2.o28FP (.rtdx_text:_RTDX_Buffer_Read)
+                  00303aa9    00000007                : buffer1.o28FP (.rtdx_text:_RTDX_Buffer_Write)
+                  00303ab0    00000006                : rtdx_mon.o28FP (.rtdx_text:_Wait)
+                  00303ab6    00000003                : rtdx_mon.o28FP (.rtdx_text:_Disallow_EmuAccess)
 
-.econst    0    00303aaa    000001cf     
-                  00303aaa    00000101     rts2800_fpu32.lib : ctype.obj (.econst:.string:__ctypes_)
-                  00303bab    00000001     --HOLE-- [fill = 0]
-                  00303bac    0000004f     bios.a28FP : tsk_stup.o28FP (.econst)
-                  00303bfb    00000001     --HOLE-- [fill = 0]
-                  00303bfc    00000023                : utl_doab.o28FP (.econst)
-                  00303c1f    00000001     --HOLE-- [fill = 0]
-                  00303c20    00000022                : utl_doer.o28FP (.econst)
-                  00303c42    0000001b     i2c.obj (.econst:.string)
-                  00303c5d    00000001     --HOLE-- [fill = 0]
-                  00303c5e    00000012     rtdxfp.lib : rtdx_mon.o28FP (.econst)
-                  00303c70    00000004     bios.a28FP : mem_allo.o28FP (.econst)
-                  00303c74    00000004     rtdxfp.lib : buffer1.o28FP (.econst)
-                  00303c78    00000001     bios.a28FP : tsk.o28FP (.econst)
+.econst    0    00303aba    000001cf     
+                  00303aba    00000101     rts2800_fpu32.lib : ctype.obj (.econst:.string:__ctypes_)
+                  00303bbb    00000001     --HOLE-- [fill = 0]
+                  00303bbc    0000004f     bios.a28FP : tsk_stup.o28FP (.econst)
+                  00303c0b    00000001     --HOLE-- [fill = 0]
+                  00303c0c    00000023                : utl_doab.o28FP (.econst)
+                  00303c2f    00000001     --HOLE-- [fill = 0]
+                  00303c30    00000022                : utl_doer.o28FP (.econst)
+                  00303c52    0000001b     i2c.obj (.econst:.string)
+                  00303c6d    00000001     --HOLE-- [fill = 0]
+                  00303c6e    00000012     rtdxfp.lib : rtdx_mon.o28FP (.econst)
+                  00303c80    00000004     bios.a28FP : mem_allo.o28FP (.econst)
+                  00303c84    00000004     rtdxfp.lib : buffer1.o28FP (.econst)
+                  00303c88    00000001     bios.a28FP : tsk.o28FP (.econst)
 
-.sysinit   0    00303c79    0000018f     
-                  00303c79    000000c0     gigous_kuo_lab4cfg.obj (.sysinit)
-                  00303d39    0000005e     bios.a28FP : boot.o28FP (.sysinit)
-                  00303d97    0000004e                : mem_init.o28FP (.sysinit:_MEM_init)
-                  00303de5    00000023                : tsk_init.o28FP (.sysinit:_TSK_init)
+.sysinit   0    00303c89    0000018f     
+                  00303c89    000000c0     gigous_kuo_lab4cfg.obj (.sysinit)
+                  00303d49    0000005e     bios.a28FP : boot.o28FP (.sysinit)
+                  00303da7    0000004e                : mem_init.o28FP (.sysinit:_MEM_init)
+                  00303df5    00000023                : tsk_init.o28FP (.sysinit:_TSK_init)
 
-.printf    0    00303c79    000000c4     COPY SECTION
-                  00303c79    000000c4     gigous_kuo_lab4cfg.obj (.printf)
+.printf    0    00303c89    000000c4     COPY SECTION
+                  00303c89    000000c4     gigous_kuo_lab4cfg.obj (.printf)
 
-.trcdata   0    00303e08    00000003     RUN ADDR = 0000826e
-                  00303e08    00000003     gigous_kuo_lab4cfg.obj (.trcdata)
+.trcdata   0    00303e18    00000003     RUN ADDR = 0000826e
+                  00303e18    00000003     gigous_kuo_lab4cfg.obj (.trcdata)
 
-.gblinit   0    00303e0b    00000021     
-                  00303e0b    00000021     gigous_kuo_lab4cfg.obj (.gblinit)
+.gblinit   0    00303e1b    00000021     
+                  00303e1b    00000021     gigous_kuo_lab4cfg.obj (.gblinit)
 
-.switch    0    00303e2c    0000001e     
-                  00303e2c    0000001e     smallprintf.obj (.switch:_vsprintf)
+.switch    0    00303e3c    0000001e     
+                  00303e3c    0000001e     smallprintf.obj (.switch:_vsprintf)
 
-.pinit     0    00303e4a    00000006     
-                  00303e4a    00000002     rtdxfp.lib : buffer1.o28FP (.pinit)
-                  00303e4c    00000002                : rtdx_mon.o28FP (.pinit)
-                  00303e4e    00000002     --HOLE-- [fill = 0]
+.pinit     0    00303e5a    00000006     
+                  00303e5a    00000002     rtdxfp.lib : buffer1.o28FP (.pinit)
+                  00303e5c    00000002                : rtdx_mon.o28FP (.pinit)
+                  00303e5e    00000002     --HOLE-- [fill = 0]
 
 csm_rsvd   0    0033ff80    00000076     
                   0033ff80    00000076     DSP2833x_CSMPasswords.obj (csm_rsvd)
@@ -1240,42 +1240,43 @@ address     data page           name
 
 0000fe40     3f9 (0000fe40)     _TXBuff
 
-00303aaa    c0ea (00303a80)     __ctypes_
+00303aba    c0ea (00303a80)     __ctypes_
 
-00303c5e    c0f1 (00303c40)     _DataLogDMAId
-00303c60    c0f1 (00303c40)     _DataLogDMACtl
-00303c62    c0f1 (00303c40)     _DataLogDMAHigh
-00303c66    c0f1 (00303c40)     _DataLogDMALow
-00303c6a    c0f1 (00303c40)     _MsgBaseHigh
-00303c6c    c0f1 (00303c40)     _MsgBaseLow
-00303c6e    c0f1 (00303c40)     _StatBase
-00303c79    c0f1 (00303c40)     PRD_StartADC$sts$maxfmt
+00303c6e    c0f1 (00303c40)     _DataLogDMAId
+00303c70    c0f1 (00303c40)     _DataLogDMACtl
+00303c72    c0f1 (00303c40)     _DataLogDMAHigh
+00303c76    c0f1 (00303c40)     _DataLogDMALow
+00303c7a    c0f1 (00303c40)     _MsgBaseHigh
+00303c7c    c0f1 (00303c40)     _MsgBaseLow
+00303c7e    c0f1 (00303c40)     _StatBase
 
-00303c82    c0f2 (00303c80)     PRD_StartADC$sts$sumfmt
-00303c8b    c0f2 (00303c80)     PRD_StartADC$sts$avgfmt
-00303c96    c0f2 (00303c80)     KNL_swi$sts$maxfmt
-00303c9e    c0f2 (00303c80)     KNL_swi$sts$sumfmt
-00303ca6    c0f2 (00303c80)     KNL_swi$sts$avgfmt
-00303cb0    c0f2 (00303c80)     PRD_swi$sts$maxfmt
-00303cb8    c0f2 (00303c80)     PRD_swi$sts$sumfmt
+00303c89    c0f2 (00303c80)     PRD_StartADC$sts$maxfmt
+00303c92    c0f2 (00303c80)     PRD_StartADC$sts$sumfmt
+00303c9b    c0f2 (00303c80)     PRD_StartADC$sts$avgfmt
+00303ca6    c0f2 (00303c80)     KNL_swi$sts$maxfmt
+00303cae    c0f2 (00303c80)     KNL_swi$sts$sumfmt
+00303cb6    c0f2 (00303c80)     KNL_swi$sts$avgfmt
 
-00303cc0    c0f3 (00303cc0)     PRD_swi$sts$avgfmt
-00303cca    c0f3 (00303cc0)     SWI_control$sts$maxfmt
-00303cd2    c0f3 (00303cc0)     SWI_control$sts$sumfmt
-00303cda    c0f3 (00303cc0)     SWI_control$sts$avgfmt
-00303ce4    c0f3 (00303cc0)     TSK_idle$sts$maxfmt
-00303cec    c0f3 (00303cc0)     TSK_idle$sts$sumfmt
-00303cf4    c0f3 (00303cc0)     TSK_idle$sts$avgfmt
-00303cfe    c0f3 (00303cc0)     TSK_I2C$sts$maxfmt
+00303cc0    c0f3 (00303cc0)     PRD_swi$sts$maxfmt
+00303cc8    c0f3 (00303cc0)     PRD_swi$sts$sumfmt
+00303cd0    c0f3 (00303cc0)     PRD_swi$sts$avgfmt
+00303cda    c0f3 (00303cc0)     SWI_control$sts$maxfmt
+00303ce2    c0f3 (00303cc0)     SWI_control$sts$sumfmt
+00303cea    c0f3 (00303cc0)     SWI_control$sts$avgfmt
+00303cf4    c0f3 (00303cc0)     TSK_idle$sts$maxfmt
+00303cfc    c0f3 (00303cc0)     TSK_idle$sts$sumfmt
 
-00303d06    c0f4 (00303d00)     TSK_I2C$sts$sumfmt
-00303d0e    c0f4 (00303d00)     TSK_I2C$sts$avgfmt
-00303d18    c0f4 (00303d00)     TSK_atmelcompass$sts$maxfmt
-00303d20    c0f4 (00303d00)     TSK_atmelcompass$sts$sumfmt
-00303d28    c0f4 (00303d00)     TSK_atmelcompass$sts$avgfmt
-00303d32    c0f4 (00303d00)     IDL_busyObj$maxfmt
-00303d35    c0f4 (00303d00)     IDL_busyObj$sumfmt
-00303d38    c0f4 (00303d00)     IDL_busyObj$avgfmt
+00303d04    c0f4 (00303d00)     TSK_idle$sts$avgfmt
+00303d0e    c0f4 (00303d00)     TSK_I2C$sts$maxfmt
+00303d16    c0f4 (00303d00)     TSK_I2C$sts$sumfmt
+00303d1e    c0f4 (00303d00)     TSK_I2C$sts$avgfmt
+00303d28    c0f4 (00303d00)     TSK_atmelcompass$sts$maxfmt
+00303d30    c0f4 (00303d00)     TSK_atmelcompass$sts$sumfmt
+00303d38    c0f4 (00303d00)     TSK_atmelcompass$sts$avgfmt
+
+00303d42    c0f5 (00303d40)     IDL_busyObj$maxfmt
+00303d45    c0f5 (00303d40)     IDL_busyObj$sumfmt
+00303d48    c0f5 (00303d40)     IDL_busyObj$avgfmt
 
 003f7ff8    fdff (003f7fc0)     _CsmPwl
 
@@ -1340,8 +1341,8 @@ ffffffff   BEGIN_M0
 0000004a   BIOSDATA_O_SWI_D_RDYTAB
 0000003e   BIOSDATA_O_SWI_D_RUNADDR
 00000096   BIOSDATA_O_SYS
-00303c79   BIOS_init
-00303d00   BIOS_start
+00303c89   BIOS_init
+00303d10   BIOS_start
 ffffffff   BOOTROM
 00000000   BUF$
 00000001   BUF_ENABLED
@@ -1357,14 +1358,14 @@ ffffffff   BOOTROM
 0000b542   CLK_D_tabbeg
 0000b544   CLK_D_timefxn
 00000000   CLK_FREERUN
-00302bec   CLK_F_getfhtime
-00302bf4   CLK_F_gethtime
-00302c15   CLK_F_getltime
-00302bf4   CLK_F_getshtime
-00302ce2   CLK_F_isr
-00302c19   CLK_F_itime
-00302591   CLK_F_run
-00302591   CLK_HOOKFXN
+00302bfc   CLK_F_getfhtime
+00302c04   CLK_F_gethtime
+00302c25   CLK_F_getltime
+00302c04   CLK_F_getshtime
+00302cf2   CLK_F_isr
+00302c29   CLK_F_itime
+003025a1   CLK_F_run
+003025a1   CLK_HOOKFXN
 00000001   CLK_HTIMEDIV
 00000003   CLK_HTIMEMULT
 0000c350   CLK_HTIMEPERLTIME
@@ -1380,7 +1381,7 @@ ffffffff   BOOTROM
 00000022   CLK_TCR
 00000002   CLK_TDDR
 00000000   CLK_TDDRHIGH
-00302bf4   CLK_TIMEFXN
+00302c04   CLK_TIMEFXN
 00000000   CLK_TIMERNUM
 00000001   CLK_USETIMER
 ffffffff   CSM_RSVD
@@ -1397,11 +1398,11 @@ ffffffff   END_BOOTROM
 ffffffff   FLASH_A
 ffffffff   FLASH_BCD
 ffffffff   FPUTABLES
-00301e4c   FS$$DIV
-00302e85   FXN_F_nop
-00302e86   FXN_F_run
-00302e96   FXN_F_selfLoop
-00302e94   FXN_F_zero
+00301e5c   FS$$DIV
+00302e95   FXN_F_nop
+00302e96   FXN_F_run
+00302ea6   FXN_F_selfLoop
+00302ea4   FXN_F_zero
 00000001   GBL$
 00005205   GBL_A_VERSION
 00000000   GBL_CALLCSLCFGINIT
@@ -1423,17 +1424,17 @@ ffffffff   FPUTABLES
 00000000   GBL_SUPPORTCSL
 0000dbef   GBL_TRCMASKVALUE
 00000001   GBL_USERINIT
-00301f66   GBL_USERINITFXN
-00302f40   GBL_USERLIMPMODEABORTFXN
+00301f76   GBL_USERINITFXN
+00302f50   GBL_USERLIMPMODEABORTFXN
 00000001   GBL_boot
 00008270   GBL_initdone
 00009000   GBL_stackbeg
 00009bff   GBL_stackend
 00000000   GIO$
-00302f40   GIO_CREATEFXN
-00302f40   GIO_DELETEFXN
-00302f40   GIO_PENDFXN
-00302f40   GIO_POSTFXN
+00302f50   GIO_CREATEFXN
+00302f50   GIO_DELETEFXN
+00302f50   GIO_PENDFXN
+00302f50   GIO_POSTFXN
 00000000   HOOK$
 00000000   HOOK_KNLID
 00000001   HST$
@@ -1456,7 +1457,7 @@ ffffffff   FPUTABLES
 0000b5af   HWI_D_spsave
 0000b5b0   HWI_D_stkbottomaddr
 0000b5b2   HWI_D_stktopaddr
-0030246f   HWI_F_dispatch
+0030247f   HWI_F_dispatch
 00000013   HWI_ILLEGAL
 00000000   HWI_ILLEGAL$hwi
 00000001   HWI_INT1
@@ -1527,50 +1528,50 @@ ffffffff   FPUTABLES
 0000b6b2   IDL_A_CALBEG
 0000b6aa   IDL_A_TABBEG
 00000000   IDL_CALIBRERROR
-00302f1c   IDL_CALIBRFXN
+00302f2c   IDL_CALIBRFXN
 0000b5e6   IDL_D_busyObj
 0000b54a   IDL_D_calbeg
 0000b54c   IDL_D_calibrate
 0000b54e   IDL_D_tabbeg
 0000b6b0   IDL_END
 0000b6b8   IDL_END$
-00302e41   IDL_F_busy
-00302c88   IDL_F_calibrate
-00302e4d   IDL_F_init
-00302f25   IDL_F_loop
-00302f1c   IDL_F_stub
+00302e51   IDL_F_busy
+00302c98   IDL_F_calibrate
+00302e5d   IDL_F_init
+00302f35   IDL_F_loop
+00302f2c   IDL_F_stub
 00000001   IDL_USECLKIDLTIME
 0000b7ba   IDL_busyObj
-00303d38   IDL_busyObj$avgfmt
+00303d48   IDL_busyObj$avgfmt
 00000001   IDL_busyObj$filter
 00000001   IDL_busyObj$iA
 00000000   IDL_busyObj$iB
 00000001   IDL_busyObj$iC
-00303d32   IDL_busyObj$maxfmt
+00303d42   IDL_busyObj$maxfmt
 00000000   IDL_busyObj$operation
 0000b7b8   IDL_busyObj$stsobj
-00303d35   IDL_busyObj$sumfmt
+00303d45   IDL_busyObj$sumfmt
 00000002   IDL_busyObj$unittype
 0000b6aa   IDL_cpuLoad
 0000b6b2   IDL_cpuLoad$
-00302bc8   KNL_glue
+00302bd8   KNL_glue
 0000b7c0   KNL_swi
 00000001   KNL_swi$dorta
 00000000   KNL_swi$ord
 00000000   KNL_swi$pri
 0000b78a   KNL_swi$sts
-00303ca6   KNL_swi$sts$avgfmt
+00303cb6   KNL_swi$sts$avgfmt
 00000002   KNL_swi$sts$filter
 00000001   KNL_swi$sts$filtmaxmult
 00000001   KNL_swi$sts$filtsummult
-00303c96   KNL_swi$sts$maxfmt
+00303ca6   KNL_swi$sts$maxfmt
 0000b788   KNL_swi$sts$stsobj
-00303c9e   KNL_swi$sts$sumfmt
+00303cae   KNL_swi$sts$sumfmt
 00000000   KNL_swi$sts$unittype
 00000000   KNL_swi$swi
-00302bd2   KNL_tick_stub
-00302042   L$$DIV
-00302051   L$$MOD
+00302be2   KNL_tick_stub
+00302052   L$$DIV
+00302061   L$$MOD
 ffffffff   L0SARAM
 0000a287   L1SARAM
 0000ae03   L1SARAM$B
@@ -1583,28 +1584,28 @@ ffffffff   L0SARAM
 0000b5e4   LNK_D_readFail
 0000b5e2   LNK_D_readPend
 0000b5e5   LNK_D_writeFail
-0030230b   LNK_F_checkChanEnabled
-00302332   LNK_F_dataPump
-0030231b   LNK_F_getChanPtr
-00302312   LNK_F_getNextChan
-0030230a   LNK_F_init
-0030245d   LNK_F_readCallBack
+0030231b   LNK_F_checkChanEnabled
+00302342   LNK_F_dataPump
+0030232b   LNK_F_getChanPtr
+00302322   LNK_F_getNextChan
+0030231a   LNK_F_init
+0030246d   LNK_F_readCallBack
 0000b6ac   LNK_dataPump
 0000b6b4   LNK_dataPump$
-003023c3   LNK_newin
-00302409   LNK_newout
-00302332   LNK_rcloop
-00302352   LNK_rdrtry
-00302356   LNK_rrloop
-00302387   LNK_wrloop
-00302383   LNK_wrrtry
+003023d3   LNK_newin
+00302419   LNK_newout
+00302342   LNK_rcloop
+00302362   LNK_rdrtry
+00302366   LNK_rrloop
+00302397   LNK_wrloop
+00302393   LNK_wrrtry
 00000001   LOG$
 00000002   LOG_A_TABBEG
 00000016   LOG_A_TABEND
 00000002   LOG_A_TABLEN
 0000b550   LOG_D_system
 00000001   LOG_ENABLED
-00302ded   LOG_F_event
+00302dfd   LOG_F_event
 00000002   LOG_system
 00000080   LOG_system$buf
 00000000   LOG_system$datatype
@@ -1824,10 +1825,10 @@ ffffffff   PIEVECT
 00000002   PIP_A_TABLEN
 0000b552   PIP_D_tabbeg
 0000b554   PIP_D_tablen
-00302b65   PIP_F_give
-00302b64   PIP_F_probe
-00302b8e   PIP_F_start
-00302b4b   PIP_F_take
+00302b75   PIP_F_give
+00302b74   PIP_F_probe
+00302b9e   PIP_F_start
+00302b5b   PIP_F_take
 00000032   PIP_OBJSIZE
 00000000   PIP_gNextId
 00000002   PIP_gNumEmbed
@@ -1847,8 +1848,8 @@ ffffffff   PIEVECT
 0000b562   PRD_D_thook
 0000b564   PRD_D_tickh
 0000b565   PRD_D_tickl
-003026cb   PRD_F_swi
-0030273a   PRD_F_tick
+003026db   PRD_F_swi
+0030274a   PRD_F_tick
 00000001   PRD_SCALAR
 0000b7d4   PRD_SWIHANDLE
 0000b5e8   PRD_StartADC
@@ -1858,26 +1859,26 @@ ffffffff   PIEVECT
 00000001   PRD_StartADC$period
 00000000   PRD_StartADC$prd
 0000b782   PRD_StartADC$sts
-00303c8b   PRD_StartADC$sts$avgfmt
+00303c9b   PRD_StartADC$sts$avgfmt
 00000000   PRD_StartADC$sts$filter
-00303c79   PRD_StartADC$sts$maxfmt
+00303c89   PRD_StartADC$sts$maxfmt
 0000b780   PRD_StartADC$sts$stsobj
-00303c82   PRD_StartADC$sts$sumfmt
+00303c92   PRD_StartADC$sts$sumfmt
 00000002   PRD_StartADC$sts$unittype
-00302bd2   PRD_THOOKFXN
+00302be2   PRD_THOOKFXN
 0000b6ba   PRD_clock
 0000b7d4   PRD_swi
 00000001   PRD_swi$dorta
 00000000   PRD_swi$ord
 00000003   PRD_swi$pri
 0000b792   PRD_swi$sts
-00303cc0   PRD_swi$sts$avgfmt
+00303cd0   PRD_swi$sts$avgfmt
 00000002   PRD_swi$sts$filter
 00000001   PRD_swi$sts$filtmaxmult
 00000001   PRD_swi$sts$filtsummult
-00303cb0   PRD_swi$sts$maxfmt
+00303cc0   PRD_swi$sts$maxfmt
 0000b790   PRD_swi$sts$stsobj
-00303cb8   PRD_swi$sts$sumfmt
+00303cc8   PRD_swi$sts$sumfmt
 00000000   PRD_swi$sts$unittype
 00000000   PRD_swi$swi
 00000001   QUE$
@@ -1885,14 +1886,14 @@ ffffffff   PIEVECT
 0000b5ce   RTA_D_logval
 0000b5d8   RTA_D_stsval
 0000b5cc   RTA_D_toHost
-00302e71   RTA_F_andn
-003027b9   RTA_F_dispatch
-00302762   RTA_F_getlog
-00302781   RTA_F_getsts
-00302e78   RTA_F_or
-0030279f   RTA_F_readblk
-003027aa   RTA_F_resetmem
-003027a8   RTA_F_writeword
+00302e81   RTA_F_andn
+003027c9   RTA_F_dispatch
+00302772   RTA_F_getlog
+00302791   RTA_F_getsts
+00302e88   RTA_F_or
+003027af   RTA_F_readblk
+003027ba   RTA_F_resetmem
+003027b8   RTA_F_writeword
 0000b6ae   RTA_dispatcher
 0000b6b6   RTA_dispatcher$
 0000b82e   RTA_fromHost
@@ -1939,7 +1940,7 @@ ffffffff   PIEVECT
 0000b5c4   RTDX_D_BufRead
 0000b5c6   RTDX_D_BufWrite
 0000b5c8   RTDX_D_Poll
-0030262f   RTDX_F_isr
+0030263f   RTDX_F_isr
 00000000   RTDX_MODE
 00000001   RTDX_USERTDX
 00000000   RTDX_USERTEXECUTION
@@ -1950,9 +1951,9 @@ ffffffff   PIEVECT
 00000001   STS$
 0000b780   STS_A_TABBEG
 0000b7c0   STS_A_TABEND
-00302d7c   STS_F_add
-00302d70   STS_F_delta
-00302d88   STS_F_reset
+00302d8c   STS_F_add
+00302d80   STS_F_delta
+00302d98   STS_F_reset
 00000001   SWI$
 0000b7c0   SWI_A_TABBEG
 0000b7fc   SWI_A_TABEND
@@ -1968,34 +1969,34 @@ ffffffff   PIEVECT
 0000b572   SWI_D_rdytab
 0000b566   SWI_D_runaddr
 00000000   SWI_EHOOKFXN
-003021fc   SWI_EXECFXN
-0030218d   SWI_F_enable
-003021fc   SWI_F_exec
-003021d8   SWI_F_exec_sync
-003021a1   SWI_F_post
-00302249   SWI_F_run
+0030220c   SWI_EXECFXN
+0030219d   SWI_F_enable
+0030220c   SWI_F_exec
+003021e8   SWI_F_exec_sync
+003021b1   SWI_F_post
+00302259   SWI_F_run
 00000000   SWI_IHOOKFXN
-00302249   SWI_RUNFXN
+00302259   SWI_RUNFXN
 0000b7e8   SWI_control
 00000001   SWI_control$dorta
 00000001   SWI_control$ord
 00000002   SWI_control$pri
 0000b79a   SWI_control$sts
-00303cda   SWI_control$sts$avgfmt
+00303cea   SWI_control$sts$avgfmt
 00000002   SWI_control$sts$filter
 00000001   SWI_control$sts$filtmaxmult
 00000001   SWI_control$sts$filtsummult
-00303cca   SWI_control$sts$maxfmt
+00303cda   SWI_control$sts$maxfmt
 0000b798   SWI_control$sts$stsobj
-00303cd2   SWI_control$sts$sumfmt
+00303ce2   SWI_control$sts$sumfmt
 00000000   SWI_control$sts$unittype
 00000000   SWI_control$swi
 00000001   SYS$
 0000b852   SYS$config
-00302eba   SYS_ABORTFXN
-00302eca   SYS_ERRORFXN
-00302f3a   SYS_EXITFXN
-00302ef4   SYS_PUTCFXN
+00302eca   SYS_ABORTFXN
+00302eda   SYS_ERRORFXN
+00302f4a   SYS_EXITFXN
+00302f04   SYS_PUTCFXN
 00004000   TRC_GBLTARG
 0000826f   TRC_R_mask
 0000826e   TRC_cinit
@@ -2007,13 +2008,13 @@ ffffffff   PIEVECT
 0000a302   TSK_I2C$stack
 0000a302   TSK_I2C$stkptr
 0000b7aa   TSK_I2C$sts
-00303d0e   TSK_I2C$sts$avgfmt
+00303d1e   TSK_I2C$sts$avgfmt
 00000002   TSK_I2C$sts$filter
 00000001   TSK_I2C$sts$filtmaxmult
 00000001   TSK_I2C$sts$filtsummult
-00303cfe   TSK_I2C$sts$maxfmt
+00303d0e   TSK_I2C$sts$maxfmt
 0000b7a8   TSK_I2C$sts$stsobj
-00303d06   TSK_I2C$sts$sumfmt
+00303d16   TSK_I2C$sts$sumfmt
 00000000   TSK_I2C$sts$unittype
 00000000   TSK_I2C$tsk
 00000000   TSK_NUM_HOOKS
@@ -2022,9 +2023,9 @@ ffffffff   PIEVECT
 0000a287   TSK_STACKSEG
 00000080   TSK_STACKSIZE
 00000000   TSK_SWITCHFXN
-00302f40   TSK_VCREATEFXN
-00302f40   TSK_VDELETEFXN
-00302f40   TSK_VEXITFXN
+00302f50   TSK_VCREATEFXN
+00302f50   TSK_VDELETEFXN
+00302f50   TSK_VEXITFXN
 0000b686   TSK_atmelcompass
 0000b680   TSK_atmelcompass$obj
 00000002   TSK_atmelcompass$ord
@@ -2032,13 +2033,13 @@ ffffffff   PIEVECT
 0000a702   TSK_atmelcompass$stack
 0000a702   TSK_atmelcompass$stkptr
 0000b7b2   TSK_atmelcompass$sts
-00303d28   TSK_atmelcompass$sts$avgfmt
+00303d38   TSK_atmelcompass$sts$avgfmt
 00000002   TSK_atmelcompass$sts$filter
 00000001   TSK_atmelcompass$sts$filtmaxmult
 00000001   TSK_atmelcompass$sts$filtsummult
-00303d18   TSK_atmelcompass$sts$maxfmt
+00303d28   TSK_atmelcompass$sts$maxfmt
 0000b7b0   TSK_atmelcompass$sts$stsobj
-00303d20   TSK_atmelcompass$sts$sumfmt
+00303d30   TSK_atmelcompass$sts$sumfmt
 00000000   TSK_atmelcompass$sts$unittype
 00000000   TSK_atmelcompass$tsk
 0000a2b2   TSK_config
@@ -2049,18 +2050,18 @@ ffffffff   PIEVECT
 0000b004   TSK_idle$stack
 0000b004   TSK_idle$stkptr
 0000b7a2   TSK_idle$sts
-00303cf4   TSK_idle$sts$avgfmt
+00303d04   TSK_idle$sts$avgfmt
 00000002   TSK_idle$sts$filter
 00000001   TSK_idle$sts$filtmaxmult
 00000001   TSK_idle$sts$filtsummult
-00303ce4   TSK_idle$sts$maxfmt
+00303cf4   TSK_idle$sts$maxfmt
 0000b7a0   TSK_idle$sts$stsobj
-00303cec   TSK_idle$sts$sumfmt
+00303cfc   TSK_idle$sts$sumfmt
 00000000   TSK_idle$sts$unittype
 00000000   TSK_idle$tsk
 00000000   UDEV$
-0030205f   UL$$DIV
-00302066   UL$$MOD
+0030206f   UL$$DIV
+00302076   UL$$MOD
 0000a0f0   _A
 00380080   _ADC_cal
 00000b00   _AdcMirror
@@ -2074,8 +2075,8 @@ ffffffff   PIEVECT
 0000a0ae   _B
 ffffffff   _BEGIN_FLASH
 ffffffff   _BEGIN_M0
-00303c79   _BIOS_init
-00303d00   _BIOS_start
+00303c89   _BIOS_init
+00303d10   _BIOS_start
 ffffffff   _BOOTROM
 0000c350   _CLK_COUNTSPMS
 0000a13e   _CLK_DFLTMICROSECS
@@ -2090,11 +2091,11 @@ ffffffff   _BOOTROM
 00000002   _CLK_TDDR
 00000000   _CLK_TIMERNUM
 00000001   _CLK_USETIMER
-00302c15   _CLK_getltime
+00302c25   _CLK_getltime
 0000b52e   _CLK_htimeDiv
 0000b530   _CLK_htimeMult
 0000a2fa   _CLK_htimePerLtime
-00302c19   _CLK_itime
+00302c29   _CLK_itime
 0000b532   _CLK_ltimeDiv
 0000b534   _CLK_ltimeMult
 ffffffff   _CSM_RSVD
@@ -2108,14 +2109,14 @@ ffffffff   _CSM_RSVD
 00000c10   _CpuTimer2Regs
 003f7ff8   _CsmPwl
 00000ae0   _CsmRegs
-00301cd8   _CsmUnlock
+00301ce8   _CsmUnlock
 0000826a   _DSP28x_usDelay
-00303c60   _DataLogDMACtl
-00303c62   _DataLogDMAHigh
-00303c5e   _DataLogDMAId
-00303c66   _DataLogDMALow
+00303c70   _DataLogDMACtl
+00303c72   _DataLogDMAHigh
+00303c6e   _DataLogDMAId
+00303c76   _DataLogDMALow
 00000880   _DevEmuRegs
-00301c2a   _DisableDog
+00301c3a   _DisableDog
 00001000   _DmaRegs
 00008131   _ECAN0INTA_mbox_cb
 000081ad   _ECAN1INTA_err_cb
@@ -2142,10 +2143,10 @@ ffffffff   _END_BOOTROM
 000068c0   _EPwm4Regs
 00006900   _EPwm5Regs
 00006940   _EPwm6Regs
-00301d8a   _EQEP_read
+00301d9a   _EQEP_read
 00006b00   _EQep1Regs
 00006b40   _EQep2Regs
-0030208b   _EnableInterrupts
+0030209b   _EnableInterrupts
 0000a094   _Enc1_rad
 0000a088   _Enc2_rad
 0000a08e   _Enc3_rad
@@ -2157,11 +2158,11 @@ ffffffff   _END_BOOTROM
 ffffffff   _FLASH_A
 ffffffff   _FLASH_BCD
 ffffffff   _FPUTABLES
-00302f40   _FXN_F_nop
+00302f50   _FXN_F_nop
 00000a80   _FlashRegs
 0000b52a   _GBL_clkIn
 0000b52c   _GBL_freq
-00302f3d   _GBL_getVersion
+00302f4d   _GBL_getVersion
 0000b528   _GBL_procId
 00006f80   _GpioCtrlRegs
 00006fc0   _GpioDataRegs
@@ -2172,10 +2173,10 @@ ffffffff   _FPUTABLES
 0000b5b4   _HWI_D_inhwi
 0000ae02   _HWI_D_intrNum
 0000b5af   _HWI_D_spsave
-00302512   _HWI_F_dispIsr0
-00302515   _HWI_F_dispIsr1
-00302468   _HWI_F_dispIsrPie
-0030246f   _HWI_F_dispatch
+00302522   _HWI_F_dispIsr0
+00302525   _HWI_F_dispIsr1
+00302478   _HWI_F_dispIsrPie
+0030247f   _HWI_F_dispatch
 00000013   _HWI_ILLEGAL
 00000001   _HWI_INT1
 0000000a   _HWI_INT10
@@ -2210,77 +2211,77 @@ ffffffff   _FPUTABLES
 0000001b   _HWI_USER8
 0000001c   _HWI_USER9
 0000b5af   _HWI_data
-00302f00   _HWI_disable
+00302f10   _HWI_disable
 0000ab02   _HWI_dispatchTab
-00302f04   _HWI_enable
-00302f06   _HWI_restore
+00302f14   _HWI_enable
+00302f16   _HWI_restore
 0000b84a   _I2CSendStrfreeQueue
 0000b84e   _I2CSendStrmsgQueue
 0000a200   _I2Cbusy
-003011cf   _I2Ctsk
+003011df   _I2Ctsk
 0000a240   _I2Ctxbuffer
 00007900   _I2caRegs
-00302f25   _IDL_F_loop
+00302f35   _IDL_F_loop
 0000b7ba   _IDL_busyObj
 0000b6aa   _IDL_cpuLoad
-0030213b   _InitAdc
+0030214b   _InitAdc
 0000824f   _InitFlash
-003010ea   _InitI2CGpio
-00301963   _InitMcbsp
-00301a3e   _InitMcbspGpio
-00301966   _InitMcbspa
-003019c9   _InitMcbspa12bit
-003019d4   _InitMcbspa16bit
-003019df   _InitMcbspa20bit
-003019ea   _InitMcbspa24bit
-003019f5   _InitMcbspa32bit
-003019c2   _InitMcbspa8bit
-00301a41   _InitMcbspaGpio
-00301994   _InitMcbspb
-00301a07   _InitMcbspb12bit
-00301a12   _InitMcbspb16bit
-00301a1d   _InitMcbspb20bit
-00301a28   _InitMcbspb24bit
-00301a33   _InitMcbspb32bit
-00301a00   _InitMcbspb8bit
-00301a7b   _InitMcbspbGpio
-00301c82   _InitPeripheralClocks
-0030206c   _InitPieCtrl
-00301c32   _InitPll
-00302018   _InitSpi
-00302019   _InitSpiGpio
-0030201c   _InitSpiaGpio
-00301c17   _InitSysCtrl
-00301100   _Init_LCD
-00301344   _Init_i2c
+003010fa   _InitI2CGpio
+00301973   _InitMcbsp
+00301a4e   _InitMcbspGpio
+00301976   _InitMcbspa
+003019d9   _InitMcbspa12bit
+003019e4   _InitMcbspa16bit
+003019ef   _InitMcbspa20bit
+003019fa   _InitMcbspa24bit
+00301a05   _InitMcbspa32bit
+003019d2   _InitMcbspa8bit
+00301a51   _InitMcbspaGpio
+003019a4   _InitMcbspb
+00301a17   _InitMcbspb12bit
+00301a22   _InitMcbspb16bit
+00301a2d   _InitMcbspb20bit
+00301a38   _InitMcbspb24bit
+00301a43   _InitMcbspb32bit
+00301a10   _InitMcbspb8bit
+00301a8b   _InitMcbspbGpio
+00301c92   _InitPeripheralClocks
+0030207c   _InitPieCtrl
+00301c42   _InitPll
+00302028   _InitSpi
+00302029   _InitSpiGpio
+0030202c   _InitSpiaGpio
+00301c27   _InitSysCtrl
+00301110   _Init_LCD
+00301354   _Init_i2c
 0000a15a   _KNL_alarm
-00302c55   _KNL_check
+00302c65   _KNL_check
 0000a148   _KNL_curqueue
 0000a15c   _KNL_curtask
 0000a140   _KNL_curtime
 0000a162   _KNL_dummy
-00302d90   _KNL_enter
-00302ee8   _KNL_exit
-00302c76   _KNL_idle
+00302da0   _KNL_enter
+00302ef8   _KNL_exit
+00302c86   _KNL_idle
 0000a14c   _KNL_idlefxn
 0000a156   _KNL_inactive
-00302d2d   _KNL_ipost
-00302c7f   _KNL_max
+00302d3d   _KNL_ipost
+00302c8f   _KNL_max
 0000a144   _KNL_maxqueue
-00302e5b   _KNL_post
+00302e6b   _KNL_post
 0000a15e   _KNL_prevtask
 0000a160   _KNL_priority
 0000a180   _KNL_queues
-00302919   _KNL_run
-00302bd9   _KNL_saveIsrFrame
+00302929   _KNL_run
+00302be9   _KNL_saveIsrFrame
 0000a142   _KNL_set
 0000a154   _KNL_setpri
 0000b7c0   _KNL_swi
 0000a146   _KNL_swiptr
-00302bab   _KNL_switch
+00302bbb   _KNL_switch
 0000a14e   _KNL_tcreatefxn
 0000a150   _KNL_tdeletefxn
-00302f2b   _KNL_tick
+00302f3b   _KNL_tick
 0000a14a   _KNL_treadyfxn
 0000a152   _KNL_tswitchfxn
 0000a141   _KNL_wFlag
@@ -2289,18 +2290,18 @@ ffffffff   _L0SARAM
 0000a287   _L1SARAM
 0000ae03   _L1SARAM_base
 00000200   _L1SARAM_length
-00301189   _LCDPrintfLine
+00301199   _LCDPrintfLine
 0000a2fe   _LCD_serial
-0030113d   _LCDvPrintfLine
-00302e0b   _LCK_pend
-00302eda   _LCK_post
-0030245d   _LNK_F_readCallBack
+0030114d   _LCDvPrintfLine
+00302e1b   _LCK_pend
+00302eea   _LCK_post
+0030246d   _LNK_F_readCallBack
 0000b6ac   _LNK_dataPump
 00000002   _LOG_A_TABBEG
 00000016   _LOG_A_TABEND
 00000002   _LOG_A_TABLEN
 0000b550   _LOG_D_system
-00302f35   _LOG_event
+00302f45   _LOG_event
 00000002   _LOG_system
 ffffffff   _M0SARAM
 ffffffff   _M1SARAM
@@ -2310,23 +2311,23 @@ ffffffff   _M1SARAM
 0000b5ba   _MEM_D_lockaddr
 0000b5b6   _MEM_D_memtab
 0000b5bc   _MEM_D_unlockaddr
-0030288c   _MEM_alloc
+0030289c   _MEM_alloc
 ffffffff   _MEM_forDMA
-00303d97   _MEM_init
+00303da7   _MEM_init
 0000a280   _MEM_memtab
 0000a1ea   _McBSPB_rdy
 0000a1ee   _McBSP_COMerr
-00301ade   _McBSP_RX_INTCH2_ISR
+00301aee   _McBSP_RX_INTCH2_ISR
 0000a1eb   _McBSP_RecGoodData_ReadyTX
-00301ad5   _McBSP_TX_INTCH1_ISR
+00301ae5   _McBSP_TX_INTCH1_ISR
 0000a1f6   _McBSPb_int_count
 0000a1ff   _McBSPb_read1
 0000a1fe   _McBSPb_read2
 00005000   _McbspaRegs
 00005040   _McbspbRegs
-00301f51   _MemCopy
-00303c6a   _MsgBaseHigh
-00303c6c   _MsgBaseLow
+00301f61   _MemCopy
+00303c7a   _MsgBaseHigh
+00303c7c   _MsgBaseLow
 0000a296   _OBJ_table
 ffffffff   _OTP
 ffffffff   _PASSWORDS
@@ -2440,29 +2441,29 @@ ffffffff   _PIEVECT
 00300836   _PWM_out
 00000ce0   _PieCtrlRegs
 00000d00   _PieVectTable
-00302e97   _QUE_get
-00302ea0   _QUE_put
+00302ea7   _QUE_get
+00302eb0   _QUE_put
 00300949   _RCSERVO_out
 0000b6ae   _RTA_dispatcher
 0000b82e   _RTA_fromHost
 0000b83c   _RTA_toHost
 0000b404   _RTDX_Buffer
 0000b524   _RTDX_Buffer_End
-00303a43   _RTDX_Buffer_Initialize
-00303a90   _RTDX_Buffer_Read
-00303a5a   _RTDX_Buffer_ReadCB
-00303a7b   _RTDX_Buffer_Size
+00303a53   _RTDX_Buffer_Initialize
+00303aa0   _RTDX_Buffer_Read
+00303a6a   _RTDX_Buffer_ReadCB
+00303a8b   _RTDX_Buffer_Size
 0000b526   _RTDX_Buffer_Start
-00303a99   _RTDX_Buffer_Write
-00303864   _RTDX_Buffer_WriteCB
-00303a6e   _RTDX_Final_RT_Monitor
-00303a13   _RTDX_Init_RT_Monitor
+00303aa9   _RTDX_Buffer_Write
+00303874   _RTDX_Buffer_WriteCB
+00303a7e   _RTDX_Final_RT_Monitor
+00303a23   _RTDX_Init_RT_Monitor
 00000002   _RTDX_JTAGONLY
 00000001   _RTDX_LMM
-0030215b   _RTDX_Mask_IER
-003039dc   _RTDX_Mon_Queue
-00303901   _RTDX_Poll
-0030217d   _RTDX_Set_IER
+0030216b   _RTDX_Mask_IER
+003039ec   _RTDX_Mon_Queue
+00303911   _RTDX_Poll
+0030218d   _RTDX_Set_IER
 00000000   _RTDX_interrupt_mask
 0000b506   _RTDX_writing
 0000810a   _RXAINT_recv_ready
@@ -2471,11 +2472,11 @@ ffffffff   _PIEVECT
 00008124   _RXCINT_recv_ready
 0000b81c   _SEM_I2CSendStrmsg_rdy
 0000b806   _SEM_atmel_rcservo
-00302dce   _SEM_pend
-003027f9   _SEM_pendEnterKnl
-00302c21   _SEM_post
-00302c21   _SEM_postBinary
-00302d0a   _SEM_postEnterKnl
+00302dde   _SEM_pend
+00302809   _SEM_pendEnterKnl
+00302c31   _SEM_post
+00302c31   _SEM_postBinary
+00302d1a   _SEM_postEnterKnl
 00300ac4   _SPI_RXint
 0000a2d4   _SPIbyte1
 0000a2d2   _SPIbyte2
@@ -2490,10 +2491,10 @@ ffffffff   _PIEVECT
 0000a2c4   _SPIenc_state_errors
 0000b780   _STS_A_TABBEG
 0000b7c0   _STS_A_TABEND
-00302d7c   _STS_add
-00302d70   _STS_delta
-00302d88   _STS_reset
-00302d85   _STS_set
+00302d8c   _STS_add
+00302d80   _STS_delta
+00302d98   _STS_reset
+00302d95   _STS_set
 0000b56e   _SWI_D_curfxn
 0000b56a   _SWI_D_curmask
 0000b5ae   _SWI_D_inswi
@@ -2501,82 +2502,82 @@ ffffffff   _PIEVECT
 0000b570   _SWI_D_rdybeg
 0000b7e8   _SWI_control
 0000b566   _SWI_data
-0030218d   _SWI_enable
-003021a1   _SWI_post
+0030219d   _SWI_enable
+003021b1   _SWI_post
 0000b5be   _SYS
 0000b204   _SYS_PUTCBEG
 0000b403   _SYS_PUTCEND
-00302f13   _SYS_abort
-00302f0a   _SYS_error
-00302d4f   _SYS_exit
+00302f23   _SYS_abort
+00302f1a   _SYS_error
+00302d5f   _SYS_exit
 0000a2de   _SYS_exitStack
 0000a2da   _SYS_exitStackPtr
 0000a2dc   _SYS_exitStackTop
 00007050   _SciaRegs
 00007750   _ScibRegs
 00007770   _ScicRegs
-00301194   _SendStr2_I2C
+003011a4   _SendStr2_I2C
 00009cc0   _SerialA
 00009c00   _SerialB
 00009d80   _SerialC
-00301c20   _ServiceDog
+00301c30   _ServiceDog
 00007040   _SpiaRegs
-00303c6e   _StatBase
+00303c7e   _StatBase
 00007010   _SysCtrlRegs
 0000826f   _TRC_R_mask
 0000a2c0   _TSK
 0000a112   _TSK_ATTRS
 0000b646   _TSK_I2C
 0000b686   _TSK_atmelcompass
-00302a85   _TSK_exit
+00302a95   _TSK_exit
 0000b606   _TSK_idle
-00303de5   _TSK_init
+00303df5   _TSK_init
 0000a111   _TSK_nTasks
 0000a110   _TSK_pid
-00302a18   _TSK_setup
-00302cba   _TSK_startup
+00302a28   _TSK_setup
+00302cca   _TSK_startup
 0000a120   _TSK_timerSem
-00302e27   _TSK_yield
+00302e37   _TSK_yield
 0000805f   _TXAINT_data_sent
 00008098   _TXBINT_data_sent
 0000fe40   _TXBuff
 000080d1   _TXCINT_data_sent
-00301958   _UART_LCDPrintfLine
-0030190a   _UART_LCDvPrintfLine
-00302eba   _UTL_doAbort
-00302eca   _UTL_doError
-00302ef4   _UTL_doPutc
-00302f3a   _UTL_halt
+00301968   _UART_LCDPrintfLine
+0030191a   _UART_LCDvPrintfLine
+00302eca   _UTL_doAbort
+00302eda   _UTL_doError
+00302f04   _UTL_doPutc
+00302f4a   _UTL_halt
 00007070   _XIntruptRegs
 00000b20   _XintfRegs
-00302591   __CLK_hwienter
+003025a1   __CLK_hwienter
 0000a2c2   __HOOK_NUMHOOKS
 0000a286   __HOOK_knlId
 00009e1c   __MEM_mutex
-00302ae8   __SEM_dopost
+00302af8   __SEM_dopost
 00009c00   __STACK_END
 00000c00   __STACK_SIZE
 00009e08   __TSK_mutex
 0000a2f2   ___TI_cleanup_ptr
 0000a2f4   ___TI_dtors_ptr
-003020ae   ___add_dtor
+003020be   ___add_dtor
 00009f41   ___atexit_func_id__
 ffffffff   ___binit__
 00009000   ___bss__
 ffffffff   ___c_args__
-00302f41   ___cinit__
+00302f51   ___cinit__
 00300000   ___data__
 00300000   ___edata__
 00009000   ___end__
-0030218d   ___etext__
-003020e1   ___memcpy_ff
-00303e4a   ___pinit__
+0030219d   ___etext__
+003020f1   ___memcpy_ff
+00303e5a   ___pinit__
 0030036e   ___text__
-00303aaa   __ctypes_
+00303aba   __ctypes_
 0000a2f0   __lock
-0030216c   __nop
-00302168   __register_lock
-00302164   __register_unlock
+0030217c   __nop
+00302178   __register_lock
+00302174   __register_unlock
 00009000   __stack
 0000a2ee   __unlock
 0000a0d0   _a
@@ -2589,23 +2590,23 @@ ffffffff   ___c_args__
 0000a215   _adc7_i2c
 0000a211   _adc8_i2c
 00300e5e   _adc_ISR
-003020bb   _atexit
+003020cb   _atexit
 0000a205   _atmelIRs_err
-003013b8   _atmel_get_adc
-003013cb   _atmel_get_all
-003013a5   _atmel_get_ir
-003013da   _atmel_get_version
-003013e4   _atmel_set_mode
-0030137f   _atmel_set_rcservo
-003013f1   _atmelcompass
-00301fbb   _atoi
+003013c8   _atmel_get_adc
+003013db   _atmel_get_all
+003013b5   _atmel_get_ir
+003013ea   _atmel_get_version
+003013f4   _atmel_set_mode
+0030138f   _atmel_set_rcservo
+00301401   _atmelcompass
+00301fcb   _atoi
 0000a100   _b
-00303d39   _c_int00
-00301abf   _clkg_delay_loop
+00303d49   _c_int00
+00301acf   _clkg_delay_loop
 00300ea7   _control
 0000a2c7   _dac1data
 0000a2c6   _dac2data
-00301aa9   _delay_loop
+00301ab9   _delay_loop
 003008e8   _dualPWM_out
 0000a09a   _enc1
 0000a0a4   _enc2
@@ -2633,24 +2634,24 @@ ffffffff   ___c_args__
 00000100   _hwi_vec_loadsize
 00300000   _hwi_vec_loadstart
 00000d00   _hwi_vec_runstart
-003012c4   _i2c_stdrecv
-00301263   _i2c_stdsend
-00301f66   _init_COECSL
-00301d09   _init_EQEP
+003012d4   _i2c_stdrecv
+00301273   _i2c_stdsend
+00301f76   _init_COECSL
+00301d19   _init_EQEP
 0030036e   _init_PWM
 00300602   _init_PWM_AS_RCSERVO
 003009c3   _init_SPI
-00301dbc   _init_dma_mcbsp
+00301dcc   _init_dma_mcbsp
 003007be   _init_dualPWM
-0030175b   _init_serial
+0030176b   _init_serial
 0000a207   _ir1_i2c
 0000a20d   _ir2_i2c
 0000a20c   _ir3_i2c
 0000a20e   _ir4_i2c
 0000a209   _ir5_i2c
-00301fec   _ltoa
-003016f0   _ltoab
-00301694   _ltoah
+00301ffc   _ltoa
+00301700   _ltoab
+003016a4   _ltoah
 00300d8b   _main
 0000a1fa   _mcbsp_dac1
 0000a1f4   _mcbsp_dac2
@@ -2658,7 +2659,7 @@ ffffffff   ___c_args__
 0000a1f8   _mcbsp_pwm2
 0000a1f0   _mcbsp_turn
 0000a1f2   _mcbsp_vref
-00302121   _modf
+00302131   _modf
 0000a043   _newF28335_Extra
 0000a1ec   _newOMAPdata
 0000a218   _new_irdata_i2c
@@ -2670,8 +2671,8 @@ ffffffff   ___c_args__
 0000a068   _omap_pwm2
 0000a058   _omap_turn
 0000a05c   _omap_vref
-00301f39   _post_init
-00301ed4   _pre_init
+00301f49   _post_init
+00301ee4   _pre_init
 0030036e   _ramfuncs_loadend
 00300100   _ramfuncs_loadstart
 00008000   _ramfuncs_runstart
@@ -2695,38 +2696,38 @@ ffffffff   ___c_args__
 0000a137   _rtdxNullFuncCnt
 0000b508   _rtdx_buffer_state
 0000b516   _rtdx_mon_state
-00300ff4   _sendData
-003018e9   _serial_printf
-003018bd   _serial_send
-00301442   _sprintf
+00301004   _sendData
+003018f9   _serial_printf
+003018cd   _serial_send
+00301452   _sprintf
 00300d05   _start_SPI
 00300e59   _start_dataCollection
-00301e44   _start_dma
-0030214f   _strchr
-00302188   _strcpy
-00302175   _strlen
+00301e54   _start_dma
+0030215f   _strchr
+00302198   _strcpy
+00302185   _strlen
 0000a044   _switchstate
 0000a21a   _task_state
 0000a082   _timeint
 0000000c   _trace
-00303e0b   _trcdata_loadend
+00303e1b   _trcdata_loadend
 00000003   _trcdata_loadsize
-00303e08   _trcdata_loadstart
+00303e18   _trcdata_loadstart
 0000826e   _trcdata_runstart
-00301880   _uninit_serial
-00300f67   _updateData
+00301890   _uninit_serial
+00300f77   _updateData
 0000a062   _value_enc1
 0000a064   _value_enc2
-00301450   _vsprintf
+00301460   _vsprintf
 00300d1e   _writeDAC7564
 0000a0e0   _x
 0000a0c0   _y
 ffffffff   binit
-00302f41   cinit
+00302f51   cinit
 0033fff6   code_start
 00300000   edata
 00009000   end
-0030218d   etext
+0030219d   etext
 00000d00   hwi0
 00000d02   hwi1
 00000d14   hwi10
@@ -2855,8 +2856,8 @@ ffffffff   binit
 00000dc2   hwi97
 00000dc4   hwi98
 00000dc6   hwi99
-00302e7e   iRTA_F_or
-00303e4a   pinit
+00302e8e   iRTA_F_or
+00303e5a   pinit
 0000000c   trace
 00000040   trace$buf
 00000001   trace$datatype
@@ -4134,282 +4135,282 @@ address    name
 00300e59   _start_dataCollection
 00300e5e   _adc_ISR
 00300ea7   _control
-00300f67   _updateData
-00300ff4   _sendData
-003010ea   _InitI2CGpio
-00301100   _Init_LCD
-0030113d   _LCDvPrintfLine
-00301189   _LCDPrintfLine
-00301194   _SendStr2_I2C
-003011cf   _I2Ctsk
-00301263   _i2c_stdsend
-003012c4   _i2c_stdrecv
-00301344   _Init_i2c
-0030137f   _atmel_set_rcservo
-003013a5   _atmel_get_ir
-003013b8   _atmel_get_adc
-003013cb   _atmel_get_all
-003013da   _atmel_get_version
-003013e4   _atmel_set_mode
-003013f1   _atmelcompass
-00301442   _sprintf
-00301450   _vsprintf
-00301694   _ltoah
-003016f0   _ltoab
-0030175b   _init_serial
-00301880   _uninit_serial
-003018bd   _serial_send
-003018e9   _serial_printf
-0030190a   _UART_LCDvPrintfLine
-00301958   _UART_LCDPrintfLine
-00301963   _InitMcbsp
-00301966   _InitMcbspa
-00301994   _InitMcbspb
-003019c2   _InitMcbspa8bit
-003019c9   _InitMcbspa12bit
-003019d4   _InitMcbspa16bit
-003019df   _InitMcbspa20bit
-003019ea   _InitMcbspa24bit
-003019f5   _InitMcbspa32bit
-00301a00   _InitMcbspb8bit
-00301a07   _InitMcbspb12bit
-00301a12   _InitMcbspb16bit
-00301a1d   _InitMcbspb20bit
-00301a28   _InitMcbspb24bit
-00301a33   _InitMcbspb32bit
-00301a3e   _InitMcbspGpio
-00301a41   _InitMcbspaGpio
-00301a7b   _InitMcbspbGpio
-00301aa9   _delay_loop
-00301abf   _clkg_delay_loop
-00301ad5   _McBSP_TX_INTCH1_ISR
-00301ade   _McBSP_RX_INTCH2_ISR
-00301c17   _InitSysCtrl
-00301c20   _ServiceDog
-00301c2a   _DisableDog
-00301c32   _InitPll
-00301c82   _InitPeripheralClocks
-00301cd8   _CsmUnlock
-00301d09   _init_EQEP
-00301d8a   _EQEP_read
-00301dbc   _init_dma_mcbsp
-00301e44   _start_dma
-00301e4c   FS$$DIV
-00301ed4   _pre_init
-00301f39   _post_init
-00301f51   _MemCopy
-00301f66   GBL_USERINITFXN
-00301f66   _init_COECSL
-00301fbb   _atoi
-00301fec   _ltoa
-00302018   _InitSpi
-00302019   _InitSpiGpio
-0030201c   _InitSpiaGpio
-00302042   L$$DIV
-00302051   L$$MOD
-0030205f   UL$$DIV
-00302066   UL$$MOD
-0030206c   _InitPieCtrl
-0030208b   _EnableInterrupts
-003020ae   ___add_dtor
-003020bb   _atexit
-003020e1   ___memcpy_ff
-00302121   _modf
-0030213b   _InitAdc
-0030214f   _strchr
-0030215b   _RTDX_Mask_IER
-00302164   __register_unlock
-00302168   __register_lock
-0030216c   __nop
-00302175   _strlen
-0030217d   _RTDX_Set_IER
-00302188   _strcpy
-0030218d   SWI_F_enable
-0030218d   _SWI_enable
-0030218d   ___etext__
-0030218d   etext
-003021a1   SWI_F_post
-003021a1   _SWI_post
-003021d8   SWI_F_exec_sync
-003021fc   SWI_EXECFXN
-003021fc   SWI_F_exec
-00302249   SWI_F_run
-00302249   SWI_RUNFXN
-0030230a   LNK_F_init
-0030230b   LNK_F_checkChanEnabled
-00302312   LNK_F_getNextChan
-0030231b   LNK_F_getChanPtr
-00302332   LNK_F_dataPump
-00302332   LNK_rcloop
-00302352   LNK_rdrtry
-00302356   LNK_rrloop
-00302383   LNK_wrrtry
-00302387   LNK_wrloop
-003023c3   LNK_newin
-00302409   LNK_newout
-0030245d   LNK_F_readCallBack
-0030245d   _LNK_F_readCallBack
-00302468   _HWI_F_dispIsrPie
-0030246f   HWI_F_dispatch
-0030246f   _HWI_F_dispatch
-00302512   _HWI_F_dispIsr0
-00302515   _HWI_F_dispIsr1
-00302591   CLK_F_run
-00302591   CLK_HOOKFXN
-00302591   __CLK_hwienter
-0030262f   RTDX_F_isr
-003026cb   PRD_F_swi
-0030273a   PRD_F_tick
-00302762   RTA_F_getlog
-00302781   RTA_F_getsts
-0030279f   RTA_F_readblk
-003027a8   RTA_F_writeword
-003027aa   RTA_F_resetmem
-003027b9   RTA_F_dispatch
-003027f9   _SEM_pendEnterKnl
-0030288c   _MEM_alloc
-00302919   _KNL_run
-00302a18   _TSK_setup
-00302a85   _TSK_exit
-00302ae8   __SEM_dopost
-00302b4b   PIP_F_take
-00302b64   PIP_F_probe
-00302b65   PIP_F_give
-00302b8e   PIP_F_start
-00302bab   _KNL_switch
-00302bc8   KNL_glue
-00302bd2   KNL_tick_stub
-00302bd2   PRD_THOOKFXN
-00302bd9   _KNL_saveIsrFrame
-00302bec   CLK_F_getfhtime
-00302bf4   CLK_F_gethtime
-00302bf4   CLK_F_getshtime
-00302bf4   CLK_TIMEFXN
-00302c15   CLK_F_getltime
-00302c15   _CLK_getltime
-00302c19   CLK_F_itime
-00302c19   _CLK_itime
-00302c21   _SEM_post
-00302c21   _SEM_postBinary
-00302c55   _KNL_check
-00302c76   _KNL_idle
-00302c7f   _KNL_max
-00302c88   IDL_F_calibrate
-00302cba   _TSK_startup
-00302ce2   CLK_F_isr
-00302d0a   _SEM_postEnterKnl
-00302d2d   _KNL_ipost
-00302d4f   _SYS_exit
-00302d70   STS_F_delta
-00302d70   _STS_delta
-00302d7c   STS_F_add
-00302d7c   _STS_add
-00302d85   _STS_set
-00302d88   STS_F_reset
-00302d88   _STS_reset
-00302d90   _KNL_enter
-00302dce   _SEM_pend
-00302ded   LOG_F_event
-00302e0b   _LCK_pend
-00302e27   _TSK_yield
-00302e41   IDL_F_busy
-00302e4d   IDL_F_init
-00302e5b   _KNL_post
-00302e71   RTA_F_andn
-00302e78   RTA_F_or
-00302e7e   iRTA_F_or
-00302e85   FXN_F_nop
-00302e86   FXN_F_run
-00302e94   FXN_F_zero
-00302e96   FXN_F_selfLoop
-00302e97   _QUE_get
-00302ea0   _QUE_put
-00302eba   SYS_ABORTFXN
-00302eba   _UTL_doAbort
-00302eca   SYS_ERRORFXN
-00302eca   _UTL_doError
-00302eda   _LCK_post
-00302ee8   _KNL_exit
-00302ef4   SYS_PUTCFXN
-00302ef4   _UTL_doPutc
-00302f00   _HWI_disable
-00302f04   _HWI_enable
-00302f06   _HWI_restore
-00302f0a   _SYS_error
-00302f13   _SYS_abort
-00302f1c   IDL_CALIBRFXN
-00302f1c   IDL_F_stub
-00302f25   IDL_F_loop
-00302f25   _IDL_F_loop
-00302f2b   _KNL_tick
-00302f35   _LOG_event
-00302f3a   SYS_EXITFXN
-00302f3a   _UTL_halt
-00302f3d   _GBL_getVersion
-00302f40   GBL_USERLIMPMODEABORTFXN
-00302f40   GIO_CREATEFXN
-00302f40   GIO_DELETEFXN
-00302f40   GIO_PENDFXN
-00302f40   GIO_POSTFXN
-00302f40   TSK_VCREATEFXN
-00302f40   TSK_VDELETEFXN
-00302f40   TSK_VEXITFXN
-00302f40   _FXN_F_nop
-00302f41   ___cinit__
-00302f41   cinit
-00303864   _RTDX_Buffer_WriteCB
-00303901   _RTDX_Poll
-003039dc   _RTDX_Mon_Queue
-00303a13   _RTDX_Init_RT_Monitor
-00303a43   _RTDX_Buffer_Initialize
-00303a5a   _RTDX_Buffer_ReadCB
-00303a6e   _RTDX_Final_RT_Monitor
-00303a7b   _RTDX_Buffer_Size
-00303a90   _RTDX_Buffer_Read
-00303a99   _RTDX_Buffer_Write
-00303aaa   __ctypes_
-00303c5e   _DataLogDMAId
-00303c60   _DataLogDMACtl
-00303c62   _DataLogDMAHigh
-00303c66   _DataLogDMALow
-00303c6a   _MsgBaseHigh
-00303c6c   _MsgBaseLow
-00303c6e   _StatBase
-00303c79   BIOS_init
-00303c79   PRD_StartADC$sts$maxfmt
-00303c79   _BIOS_init
-00303c82   PRD_StartADC$sts$sumfmt
-00303c8b   PRD_StartADC$sts$avgfmt
-00303c96   KNL_swi$sts$maxfmt
-00303c9e   KNL_swi$sts$sumfmt
-00303ca6   KNL_swi$sts$avgfmt
-00303cb0   PRD_swi$sts$maxfmt
-00303cb8   PRD_swi$sts$sumfmt
-00303cc0   PRD_swi$sts$avgfmt
-00303cca   SWI_control$sts$maxfmt
-00303cd2   SWI_control$sts$sumfmt
-00303cda   SWI_control$sts$avgfmt
-00303ce4   TSK_idle$sts$maxfmt
-00303cec   TSK_idle$sts$sumfmt
-00303cf4   TSK_idle$sts$avgfmt
-00303cfe   TSK_I2C$sts$maxfmt
-00303d00   BIOS_start
-00303d00   _BIOS_start
-00303d06   TSK_I2C$sts$sumfmt
-00303d0e   TSK_I2C$sts$avgfmt
-00303d18   TSK_atmelcompass$sts$maxfmt
-00303d20   TSK_atmelcompass$sts$sumfmt
-00303d28   TSK_atmelcompass$sts$avgfmt
-00303d32   IDL_busyObj$maxfmt
-00303d35   IDL_busyObj$sumfmt
-00303d38   IDL_busyObj$avgfmt
-00303d39   _c_int00
-00303d97   _MEM_init
-00303de5   _TSK_init
-00303e08   _trcdata_loadstart
-00303e0b   _trcdata_loadend
-00303e4a   ___pinit__
-00303e4a   pinit
+00300f77   _updateData
+00301004   _sendData
+003010fa   _InitI2CGpio
+00301110   _Init_LCD
+0030114d   _LCDvPrintfLine
+00301199   _LCDPrintfLine
+003011a4   _SendStr2_I2C
+003011df   _I2Ctsk
+00301273   _i2c_stdsend
+003012d4   _i2c_stdrecv
+00301354   _Init_i2c
+0030138f   _atmel_set_rcservo
+003013b5   _atmel_get_ir
+003013c8   _atmel_get_adc
+003013db   _atmel_get_all
+003013ea   _atmel_get_version
+003013f4   _atmel_set_mode
+00301401   _atmelcompass
+00301452   _sprintf
+00301460   _vsprintf
+003016a4   _ltoah
+00301700   _ltoab
+0030176b   _init_serial
+00301890   _uninit_serial
+003018cd   _serial_send
+003018f9   _serial_printf
+0030191a   _UART_LCDvPrintfLine
+00301968   _UART_LCDPrintfLine
+00301973   _InitMcbsp
+00301976   _InitMcbspa
+003019a4   _InitMcbspb
+003019d2   _InitMcbspa8bit
+003019d9   _InitMcbspa12bit
+003019e4   _InitMcbspa16bit
+003019ef   _InitMcbspa20bit
+003019fa   _InitMcbspa24bit
+00301a05   _InitMcbspa32bit
+00301a10   _InitMcbspb8bit
+00301a17   _InitMcbspb12bit
+00301a22   _InitMcbspb16bit
+00301a2d   _InitMcbspb20bit
+00301a38   _InitMcbspb24bit
+00301a43   _InitMcbspb32bit
+00301a4e   _InitMcbspGpio
+00301a51   _InitMcbspaGpio
+00301a8b   _InitMcbspbGpio
+00301ab9   _delay_loop
+00301acf   _clkg_delay_loop
+00301ae5   _McBSP_TX_INTCH1_ISR
+00301aee   _McBSP_RX_INTCH2_ISR
+00301c27   _InitSysCtrl
+00301c30   _ServiceDog
+00301c3a   _DisableDog
+00301c42   _InitPll
+00301c92   _InitPeripheralClocks
+00301ce8   _CsmUnlock
+00301d19   _init_EQEP
+00301d9a   _EQEP_read
+00301dcc   _init_dma_mcbsp
+00301e54   _start_dma
+00301e5c   FS$$DIV
+00301ee4   _pre_init
+00301f49   _post_init
+00301f61   _MemCopy
+00301f76   GBL_USERINITFXN
+00301f76   _init_COECSL
+00301fcb   _atoi
+00301ffc   _ltoa
+00302028   _InitSpi
+00302029   _InitSpiGpio
+0030202c   _InitSpiaGpio
+00302052   L$$DIV
+00302061   L$$MOD
+0030206f   UL$$DIV
+00302076   UL$$MOD
+0030207c   _InitPieCtrl
+0030209b   _EnableInterrupts
+003020be   ___add_dtor
+003020cb   _atexit
+003020f1   ___memcpy_ff
+00302131   _modf
+0030214b   _InitAdc
+0030215f   _strchr
+0030216b   _RTDX_Mask_IER
+00302174   __register_unlock
+00302178   __register_lock
+0030217c   __nop
+00302185   _strlen
+0030218d   _RTDX_Set_IER
+00302198   _strcpy
+0030219d   SWI_F_enable
+0030219d   _SWI_enable
+0030219d   ___etext__
+0030219d   etext
+003021b1   SWI_F_post
+003021b1   _SWI_post
+003021e8   SWI_F_exec_sync
+0030220c   SWI_EXECFXN
+0030220c   SWI_F_exec
+00302259   SWI_F_run
+00302259   SWI_RUNFXN
+0030231a   LNK_F_init
+0030231b   LNK_F_checkChanEnabled
+00302322   LNK_F_getNextChan
+0030232b   LNK_F_getChanPtr
+00302342   LNK_F_dataPump
+00302342   LNK_rcloop
+00302362   LNK_rdrtry
+00302366   LNK_rrloop
+00302393   LNK_wrrtry
+00302397   LNK_wrloop
+003023d3   LNK_newin
+00302419   LNK_newout
+0030246d   LNK_F_readCallBack
+0030246d   _LNK_F_readCallBack
+00302478   _HWI_F_dispIsrPie
+0030247f   HWI_F_dispatch
+0030247f   _HWI_F_dispatch
+00302522   _HWI_F_dispIsr0
+00302525   _HWI_F_dispIsr1
+003025a1   CLK_F_run
+003025a1   CLK_HOOKFXN
+003025a1   __CLK_hwienter
+0030263f   RTDX_F_isr
+003026db   PRD_F_swi
+0030274a   PRD_F_tick
+00302772   RTA_F_getlog
+00302791   RTA_F_getsts
+003027af   RTA_F_readblk
+003027b8   RTA_F_writeword
+003027ba   RTA_F_resetmem
+003027c9   RTA_F_dispatch
+00302809   _SEM_pendEnterKnl
+0030289c   _MEM_alloc
+00302929   _KNL_run
+00302a28   _TSK_setup
+00302a95   _TSK_exit
+00302af8   __SEM_dopost
+00302b5b   PIP_F_take
+00302b74   PIP_F_probe
+00302b75   PIP_F_give
+00302b9e   PIP_F_start
+00302bbb   _KNL_switch
+00302bd8   KNL_glue
+00302be2   KNL_tick_stub
+00302be2   PRD_THOOKFXN
+00302be9   _KNL_saveIsrFrame
+00302bfc   CLK_F_getfhtime
+00302c04   CLK_F_gethtime
+00302c04   CLK_F_getshtime
+00302c04   CLK_TIMEFXN
+00302c25   CLK_F_getltime
+00302c25   _CLK_getltime
+00302c29   CLK_F_itime
+00302c29   _CLK_itime
+00302c31   _SEM_post
+00302c31   _SEM_postBinary
+00302c65   _KNL_check
+00302c86   _KNL_idle
+00302c8f   _KNL_max
+00302c98   IDL_F_calibrate
+00302cca   _TSK_startup
+00302cf2   CLK_F_isr
+00302d1a   _SEM_postEnterKnl
+00302d3d   _KNL_ipost
+00302d5f   _SYS_exit
+00302d80   STS_F_delta
+00302d80   _STS_delta
+00302d8c   STS_F_add
+00302d8c   _STS_add
+00302d95   _STS_set
+00302d98   STS_F_reset
+00302d98   _STS_reset
+00302da0   _KNL_enter
+00302dde   _SEM_pend
+00302dfd   LOG_F_event
+00302e1b   _LCK_pend
+00302e37   _TSK_yield
+00302e51   IDL_F_busy
+00302e5d   IDL_F_init
+00302e6b   _KNL_post
+00302e81   RTA_F_andn
+00302e88   RTA_F_or
+00302e8e   iRTA_F_or
+00302e95   FXN_F_nop
+00302e96   FXN_F_run
+00302ea4   FXN_F_zero
+00302ea6   FXN_F_selfLoop
+00302ea7   _QUE_get
+00302eb0   _QUE_put
+00302eca   SYS_ABORTFXN
+00302eca   _UTL_doAbort
+00302eda   SYS_ERRORFXN
+00302eda   _UTL_doError
+00302eea   _LCK_post
+00302ef8   _KNL_exit
+00302f04   SYS_PUTCFXN
+00302f04   _UTL_doPutc
+00302f10   _HWI_disable
+00302f14   _HWI_enable
+00302f16   _HWI_restore
+00302f1a   _SYS_error
+00302f23   _SYS_abort
+00302f2c   IDL_CALIBRFXN
+00302f2c   IDL_F_stub
+00302f35   IDL_F_loop
+00302f35   _IDL_F_loop
+00302f3b   _KNL_tick
+00302f45   _LOG_event
+00302f4a   SYS_EXITFXN
+00302f4a   _UTL_halt
+00302f4d   _GBL_getVersion
+00302f50   GBL_USERLIMPMODEABORTFXN
+00302f50   GIO_CREATEFXN
+00302f50   GIO_DELETEFXN
+00302f50   GIO_PENDFXN
+00302f50   GIO_POSTFXN
+00302f50   TSK_VCREATEFXN
+00302f50   TSK_VDELETEFXN
+00302f50   TSK_VEXITFXN
+00302f50   _FXN_F_nop
+00302f51   ___cinit__
+00302f51   cinit
+00303874   _RTDX_Buffer_WriteCB
+00303911   _RTDX_Poll
+003039ec   _RTDX_Mon_Queue
+00303a23   _RTDX_Init_RT_Monitor
+00303a53   _RTDX_Buffer_Initialize
+00303a6a   _RTDX_Buffer_ReadCB
+00303a7e   _RTDX_Final_RT_Monitor
+00303a8b   _RTDX_Buffer_Size
+00303aa0   _RTDX_Buffer_Read
+00303aa9   _RTDX_Buffer_Write
+00303aba   __ctypes_
+00303c6e   _DataLogDMAId
+00303c70   _DataLogDMACtl
+00303c72   _DataLogDMAHigh
+00303c76   _DataLogDMALow
+00303c7a   _MsgBaseHigh
+00303c7c   _MsgBaseLow
+00303c7e   _StatBase
+00303c89   BIOS_init
+00303c89   PRD_StartADC$sts$maxfmt
+00303c89   _BIOS_init
+00303c92   PRD_StartADC$sts$sumfmt
+00303c9b   PRD_StartADC$sts$avgfmt
+00303ca6   KNL_swi$sts$maxfmt
+00303cae   KNL_swi$sts$sumfmt
+00303cb6   KNL_swi$sts$avgfmt
+00303cc0   PRD_swi$sts$maxfmt
+00303cc8   PRD_swi$sts$sumfmt
+00303cd0   PRD_swi$sts$avgfmt
+00303cda   SWI_control$sts$maxfmt
+00303ce2   SWI_control$sts$sumfmt
+00303cea   SWI_control$sts$avgfmt
+00303cf4   TSK_idle$sts$maxfmt
+00303cfc   TSK_idle$sts$sumfmt
+00303d04   TSK_idle$sts$avgfmt
+00303d0e   TSK_I2C$sts$maxfmt
+00303d10   BIOS_start
+00303d10   _BIOS_start
+00303d16   TSK_I2C$sts$sumfmt
+00303d1e   TSK_I2C$sts$avgfmt
+00303d28   TSK_atmelcompass$sts$maxfmt
+00303d30   TSK_atmelcompass$sts$sumfmt
+00303d38   TSK_atmelcompass$sts$avgfmt
+00303d42   IDL_busyObj$maxfmt
+00303d45   IDL_busyObj$sumfmt
+00303d48   IDL_busyObj$avgfmt
+00303d49   _c_int00
+00303da7   _MEM_init
+00303df5   _TSK_init
+00303e18   _trcdata_loadstart
+00303e1b   _trcdata_loadend
+00303e5a   ___pinit__
+00303e5a   pinit
 0033fff6   code_start
 00380080   _ADC_cal
 003f7ff8   _CsmPwl
