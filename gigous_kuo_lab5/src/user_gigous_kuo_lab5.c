@@ -398,6 +398,10 @@ void control(void) {
 	p_old1 = p_current1;
 	p_old2 = p_current2;
 
+	F28335_Extra1 = 0;
+	F28335_Extra2 = pos_x;
+	F28335_Extra3 = (v1+v2)/2.0;
+	F28335_Extra4 = 0.0;
 	if ( (timeint % 100) == 0 )
 	{
 		UART_LCDPrintfLine(1, "%s %.1f", ctrl_alg, Enc3_rad/100);
