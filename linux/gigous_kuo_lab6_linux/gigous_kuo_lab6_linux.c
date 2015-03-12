@@ -10,13 +10,21 @@
 #include <termios.h>
 #include <sys/types.h>
 #include <sys/mman.h>
-#include "DSPcommshell.h"
+#include "gigous_kuo_lab6_linux.h"
 #include "omapl138_gpiofuncs.h"
 #include "../../sharedmem_com/sharedmem.h"
 
 #define MAP_SIZE 4096UL
 #define MAP_MASK (MAP_SIZE - 1)
 #define DELAYTIME 100000
+
+#define REF_RIGHT_WALL 2
+#define FRONT_ERROR_THRESHOLD 3
+#define KP_RIGHT_WALL 4
+#define KP_FRONT_WALL 5
+#define FRONT_TURN_VELOCITY 6
+#define TURN_COMMAND_SATURATION 7
+
 
 // functions declared at bottom of this file
 int mygetch(void);
@@ -59,7 +67,12 @@ volatile float tempFloats[NUM_FLOATS_FROM_LINUX_TO_DSP];
 int firsttime = 1;
 
 
-
+float ref_right_wall;
+float front_error_threshold;
+float Kp_right_wall = 0.002;
+float Kp_front_wall = 0.001;
+float front_turn_velocity = 0.4;
+float turn_command_saturation = 1.0;
 
 /*
 * main()
@@ -131,15 +144,23 @@ int main (int argc, char **argv)
 		printf("s - enter Desired Velocity Setpoint\n");
 		printf("q - increment Left\n");
 		printf("p - increment Right\n");
+		
+		printf("1 - ref right wall\n");
+		printf("2 - front error threshold\n");
+		printf("3 - Kp right wall\n");
+		printf("4 - Kp front wall\n");
+		printf("5 - front turn velocity\n");
+		printf("6 - turn command saturation\n");
+
 		mychar = (char) mygetch();
 		
 		switch (mychar) {
 		case 'q':
-			if (turn > 0.0) {
-				turn = 0.0;
-			} else {
-				turn = turn - 0.2;
-			}
+			// if (turn > 0.0) {
+			// 	turn = 0.0;
+			// } else {
+			turn = turn - 0.2;
+			// }
 			printf("turn =%.3f\n",turn);
 			
 			// send new turn value to DSP
@@ -148,11 +169,11 @@ int main (int argc, char **argv)
 			writefloats_sharedmem_5times();  // Our hack way of "hopefully" making sure our data is not sitting in cache but in the actual shared memory
 			break;
 		case 'p':                                
-			if (turn < 0.0) {
-				turn = 0.0;
-			} else {
-				turn = turn + 0.2;
-			}
+			// if (turn < 0.0) {
+			// 	turn = 0.0;
+			// } else {
+			turn = turn + 0.2;
+			// }
 			printf("turn =%.3f\n",turn);
 			
 			// send new turn value to DSP
@@ -182,6 +203,26 @@ int main (int argc, char **argv)
 			}
 			// send new Vref value to DSP
 			DSPFloats[0] = DVel;
+			writefloats_sharedmem_5times();  // Our hack way of "hopefully" making sure our data is not sitting in cache but in the actual shared memory
+			break;
+
+		case '1'
+			// request new Velocity reference point from user and send it to DSP
+			printf("Enter Desired Velocity Setpoint\n");
+			fgets(buffer,190,stdin); 
+			buffer[strlen(buffer)-1] = '\0';  // get ride of '\n' in returned string
+			if (buffer[0] != '\0') {
+				if (sscanf(buffer,"%f",&tempfloat) != 0) {  // check that it was a number entered
+					DVel = tempfloat;
+					printf("DVel = %.3f\n",DVel);
+				}  else {
+					printf("Error: Non numerical value typed\n");
+				}
+			} else {
+				printf("Error: DVel not changed\n");
+			}
+			// send new Vref value to DSP
+			DSPFloats[REF_RIGHT_WALL] = ref_right_wall;
 			writefloats_sharedmem_5times();  // Our hack way of "hopefully" making sure our data is not sitting in cache but in the actual shared memory
 			break;
 		default:
