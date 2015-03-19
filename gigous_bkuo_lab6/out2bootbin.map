@@ -12,7 +12,7 @@ PHYSICAL MEMORY PARAMETERS
 
 BOOT LOADER PARAMETERS
    Table Address: 0x0000, PAGE 0
-   Entry Point  : 0x11823d80
+   Entry Point  : 0x11826820
 
 
 OUTPUT TRANSLATION MAP
@@ -21,19 +21,19 @@ OUTPUT TRANSLATION MAP
 --------------------------------------------------------------------------------
    OUTPUT FILES: C:/gigous2_bkuo/repo/gigous_bkuo_lab6/gigous_bkuo_lab6Project\..\gigous_bkuo_lab6.bin [b0..b7]
 
-   CONTENTS: 00000000..0001c42b   BOOT TABLE
-                         .hwi_vec : btad=00000000  dest=11827000 size=00000200
-                            .bios : btad=0000020c  dest=118198a0 size=00004500
-                           .pinit : btad=00004714  dest=118264ac size=0000000c
-                            .text : btad=00004728  dest=11800000 size=00013c60
-                           .cinit : btad=00018390  dest=1181dda0 size=000020ec
-                          .switch : btad=0001a484  dest=11827994 size=000000ac
-                         .gblinit : btad=0001a538  dest=11823f60 size=00000064
-                         .sysinit : btad=0001a5a4  dest=11823a60 size=00000500
-                         .trcdata : btad=0001aaac  dest=11827a70 size=0000000c
-                       .rtdx_text : btad=0001aac0  dest=11821ea0 size=00000fc0
-                           .const : btad=0001ba88  dest=11825800 size=00000694
-                            .args : btad=0001c124  dest=11821e9c size=00000004
-                           .trace : btad=0001c130  dest=11826db8 size=00000200
-                             .log : btad=0001c338  dest=11827a40 size=00000030
-                             .sts : btad=0001c370  dest=118278e4 size=000000b0
+   CONTENTS: 00000000..0001c73b   BOOT TABLE
+                         .hwi_vec : btad=00000000  dest=11827400 size=00000200
+                            .bios : btad=0000020c  dest=11819b20 size=00004500
+                           .pinit : btad=00004714  dest=11823fdc size=0000000c
+                            .text : btad=00004728  dest=11800000 size=00013ea0
+                           .cinit : btad=000185d0  dest=1181e020 size=000021ac
+                          .switch : btad=0001a784  dest=11827c94 size=000000ac
+                         .gblinit : btad=0001a838  dest=11827d40 size=00000064
+                         .sysinit : btad=0001a8a4  dest=11826500 size=00000500
+                         .trcdata : btad=0001adac  dest=11823fe8 size=0000000c
+                       .rtdx_text : btad=0001adc0  dest=118221e0 size=00000fc0
+                           .const : btad=0001bd88  dest=11825800 size=000006a4
+                            .args : btad=0001c434  dest=118221dc size=00000004
+                           .trace : btad=0001c440  dest=11823da0 size=00000200
+                             .log : btad=0001c648  dest=11827da4 size=00000030
+                             .sts : btad=0001c680  dest=11827be4 size=000000b0

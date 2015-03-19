@@ -66,14 +66,6 @@ float DSPFloats[NUM_FLOATS_FROM_LINUX_TO_DSP];  // temporay variables used in th
 volatile float tempFloats[NUM_FLOATS_FROM_LINUX_TO_DSP];
 int firsttime = 1;
 
-
-float ref_right_wall;
-float front_error_threshold;
-float Kp_right_wall = 0.002;
-float Kp_front_wall = 0.001;
-float front_turn_velocity = 0.4;
-float turn_command_saturation = 1.0;
-
 /*
 * main()
 *   process command line input
@@ -88,6 +80,12 @@ int main (int argc, char **argv)
 	float DVel = 0;
 	float turn = 0.0;
 	
+	float ref_right_wall;
+	float front_error_threshold;
+	float Kp_right_wall = 0.002;
+	float Kp_front_wall = 0.001;
+	float front_turn_velocity = 0.4;
+	float turn_command_saturation = 1.0;
 	
 	/* ****************************************************************/
 	/*  Memory map to physical memory spaces of the GPIO control registers and shared memory space */	
@@ -132,6 +130,15 @@ int main (int argc, char **argv)
 	for (index=0;index<NUM_FLOATS_FROM_LINUX_TO_DSP;index++) {
 		DSPFloats[index] = 0.0;
 	}
+
+	DSPFloats[REF_RIGHT_WALL] = 500;
+	DSPFloats[FRONT_ERROR_THRESHOLD] = 500;
+	DSPFloats[KP_RIGHT_WALL] = 0.002;
+	DSPFloats[KP_FRONT_WALL] = 0.001;
+	DSPFloats[FRONT_TURN_VELOCITY] = 0.25;
+	DSPFloats[TURN_COMMAND_SATURATION] = 1.0;
+
+
 	writefloats_sharedmem_5times();  // Our hack way of "hopefully" making sure our data is not sitting in cache but in the actual shared memory
 
 	// stay in this while loop receiving input from the user until user exits by selecting option e or v  
@@ -206,23 +213,123 @@ int main (int argc, char **argv)
 			writefloats_sharedmem_5times();  // Our hack way of "hopefully" making sure our data is not sitting in cache but in the actual shared memory
 			break;
 
-		case '1'
+		case '1':
 			// request new Velocity reference point from user and send it to DSP
-			printf("Enter Desired Velocity Setpoint\n");
+			printf("Enter Desired ref_right_wall :)\n");
 			fgets(buffer,190,stdin); 
 			buffer[strlen(buffer)-1] = '\0';  // get ride of '\n' in returned string
 			if (buffer[0] != '\0') {
 				if (sscanf(buffer,"%f",&tempfloat) != 0) {  // check that it was a number entered
-					DVel = tempfloat;
-					printf("DVel = %.3f\n",DVel);
+					ref_right_wall = tempfloat;
+					printf("ref_right_wall = %.3f\n",ref_right_wall);
 				}  else {
-					printf("Error: Non numerical value typed\n");
+					printf("Error: Non numerical value typed. You messed up.\n");
 				}
 			} else {
-				printf("Error: DVel not changed\n");
+				printf("Error: ref_right_wall not changed\n");
 			}
 			// send new Vref value to DSP
 			DSPFloats[REF_RIGHT_WALL] = ref_right_wall;
+			writefloats_sharedmem_5times();  // Our hack way of "hopefully" making sure our data is not sitting in cache but in the actual shared memory
+			break;
+
+		case '2':
+			// request new Velocity reference point from user and send it to DSP
+			printf("Enter Desired front_error_threshold :)\n");
+			fgets(buffer,190,stdin); 
+			buffer[strlen(buffer)-1] = '\0';  // get ride of '\n' in returned string
+			if (buffer[0] != '\0') {
+				if (sscanf(buffer,"%f",&tempfloat) != 0) {  // check that it was a number entered
+					front_error_threshold = tempfloat;
+					printf("front_error_threshold = %.3f\n",front_error_threshold);
+				}  else {
+					printf("Error: Non numerical value typed. You messed up.\n");
+				}
+			} else {
+				printf("Error: front_error_threshold not changed\n");
+			}
+			// send new Vref value to DSP
+			DSPFloats[FRONT_ERROR_THRESHOLD] = front_error_threshold;
+			writefloats_sharedmem_5times();  // Our hack way of "hopefully" making sure our data is not sitting in cache but in the actual shared memory
+			break;
+
+		case '3':
+			// request new Velocity reference point from user and send it to DSP
+			printf("Enter Desired Kp_right_wall :)\n");
+			fgets(buffer,190,stdin); 
+			buffer[strlen(buffer)-1] = '\0';  // get ride of '\n' in returned string
+			if (buffer[0] != '\0') {
+				if (sscanf(buffer,"%f",&tempfloat) != 0) {  // check that it was a number entered
+					Kp_right_wall = tempfloat;
+					printf("Kp_right_wall = %.3f\n",Kp_right_wall);
+				}  else {
+					printf("Error: Non numerical value typed. You messed up.\n");
+				}
+			} else {
+				printf("Error: Kp_right_wall not changed\n");
+			}
+			// send new Vref value to DSP
+			DSPFloats[KP_RIGHT_WALL] = Kp_right_wall;
+			writefloats_sharedmem_5times();  // Our hack way of "hopefully" making sure our data is not sitting in cache but in the actual shared memory
+			break;
+
+		case '4':
+			// request new Velocity reference point from user and send it to DSP
+			printf("Enter Desired Kp_front_wall :)\n");
+			fgets(buffer,190,stdin); 
+			buffer[strlen(buffer)-1] = '\0';  // get ride of '\n' in returned string
+			if (buffer[0] != '\0') {
+				if (sscanf(buffer,"%f",&tempfloat) != 0) {  // check that it was a number entered
+					Kp_front_wall = tempfloat;
+					printf("Kp_front_wall = %.3f\n",Kp_front_wall);
+				}  else {
+					printf("Error: Non numerical value typed. You messed up.\n");
+				}
+			} else {
+				printf("Error: Kp_front_wall not changed\n");
+			}
+			// send new Vref value to DSP
+			DSPFloats[KP_FRONT_WALL] = Kp_front_wall;
+			writefloats_sharedmem_5times();  // Our hack way of "hopefully" making sure our data is not sitting in cache but in the actual shared memory
+			break;
+
+		case '5':
+			// request new Velocity reference point from user and send it to DSP
+			printf("Enter Desired front_turn_velocity :)\n");
+			fgets(buffer,190,stdin); 
+			buffer[strlen(buffer)-1] = '\0';  // get ride of '\n' in returned string
+			if (buffer[0] != '\0') {
+				if (sscanf(buffer,"%f",&tempfloat) != 0) {  // check that it was a number entered
+					front_turn_velocity = tempfloat;
+					printf("front_turn_velocity = %.3f\n",front_turn_velocity);
+				}  else {
+					printf("Error: Non numerical value typed. You messed up.\n");
+				}
+			} else {
+				printf("Error: front_turn_velocity not changed\n");
+			}
+			// send new Vref value to DSP
+			DSPFloats[FRONT_TURN_VELOCITY] = front_turn_velocity;
+			writefloats_sharedmem_5times();  // Our hack way of "hopefully" making sure our data is not sitting in cache but in the actual shared memory
+			break;
+
+		case '6':
+			// request new Velocity reference point from user and send it to DSP
+			printf("Enter Desired turn_command_saturation :)\n");
+			fgets(buffer,190,stdin); 
+			buffer[strlen(buffer)-1] = '\0';  // get ride of '\n' in returned string
+			if (buffer[0] != '\0') {
+				if (sscanf(buffer,"%f",&tempfloat) != 0) {  // check that it was a number entered
+					turn_command_saturation = tempfloat;
+					printf("turn_command_saturation = %.3f\n",turn_command_saturation);
+				}  else {
+					printf("Error: Non numerical value typed. You messed up.\n");
+				}
+			} else {
+				printf("Error: turn_command_saturation not changed\n");
+			}
+			// send new Vref value to DSP
+			DSPFloats[TURN_COMMAND_SATURATION] = turn_command_saturation;
 			writefloats_sharedmem_5times();  // Our hack way of "hopefully" making sure our data is not sitting in cache but in the actual shared memory
 			break;
 		default:

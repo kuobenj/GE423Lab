@@ -41,6 +41,13 @@
 
 #define FEETINONEMETER 3.28083989501312
 
+#define REF_RIGHT_WALL 2
+#define FRONT_ERROR_THRESHOLD 3
+#define KP_RIGHT_WALL 4
+#define KP_FRONT_WALL 5
+#define FRONT_TURN_VELOCITY 6
+#define TURN_COMMAND_SATURATION 7
+
 extern EDMA3_CCRL_Regs *EDMA3_0_Regs;
 
 volatile uint32_t index;
@@ -69,6 +76,22 @@ extern float switchstate;
 
 float vref = 0;
 float turn = 0;
+float ref_right_wall = 200;
+float front_error_threshold = 200;
+float Kp_right_wall = 0.002;
+float Kp_front_wall = 0.001;
+float front_turn_velocity = 0.4;
+float turn_command_saturation = 1.0;
+
+int newnavdata = 0;
+float newvref = 0;
+float newturn = 0;
+float new_ref_right_wall = 200;
+float new_front_error_threshold = 200;
+float new_Kp_right_wall = 0.002;
+float new_Kp_front_wall = 0.001;
+float new_front_turn_velocity = 0.4;
+float new_turn_command_saturation = 1.0;
 
 int tskcount = 0;
 char fromLinuxstring[LINUX_COMSIZE + 2];
@@ -78,9 +101,8 @@ float LVvalue1 = 0;
 float LVvalue2 = 0;
 int new_LV_data = 0;
 
-int newnavdata = 0;
-float newvref = 0;
-float newturn = 0;
+float front_wall_error;
+float right_wall_error;
 
 extern sharedmemstruct *ptrshrdmem;
 
@@ -113,6 +135,29 @@ int errorcheck = 1;
 
 pose UpdateOptitrackStates(pose localROBOTps, int * flag);
 
+ void swapNumbers(int i, int j, float *array) {
+
+        float temp;
+        temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+}
+
+void bubbleSort(float *array) {
+        int n = 5;
+        int k;
+        int m;
+        int i;
+        for (m = n; m >= 0; m--) {
+            for (i = 0; i < m - 1; i++) {
+                k = i + 1;
+                if (array[i] > array[k]) {
+                    swapNumbers(i, k, array);
+                }
+            }
+            //printNumbers(array);
+        }
+}
 
 void ComWithLinux(void) {
 
@@ -126,8 +171,16 @@ void ComWithLinux(void) {
 		if (GET_DATA_FROM_LINUX) {
 
 			if (newnavdata == 0) {
+
 				newvref = ptrshrdmem->Floats_to_DSP[0];
 				newturn = ptrshrdmem->Floats_to_DSP[1];
+				new_ref_right_wall = ptrshrdmem->Floats_to_DSP[REF_RIGHT_WALL];
+				new_front_error_threshold = ptrshrdmem->Floats_to_DSP[FRONT_ERROR_THRESHOLD];
+				new_Kp_right_wall = ptrshrdmem->Floats_to_DSP[KP_RIGHT_WALL];
+				new_Kp_front_wall = ptrshrdmem->Floats_to_DSP[KP_FRONT_WALL];
+				new_front_turn_velocity = ptrshrdmem->Floats_to_DSP[FRONT_TURN_VELOCITY];
+				new_turn_command_saturation = ptrshrdmem->Floats_to_DSP[TURN_COMMAND_SATURATION];
+
 				newnavdata = 1;
 			}
 
@@ -414,17 +467,92 @@ void RobotControl(void) {
 	{
 		vref = newvref;
 		turn = newturn;
+		ref_right_wall = new_ref_right_wall;
+		front_error_threshold = new_front_turn_velocity;
+		Kp_right_wall = new_Kp_right_wall;
+		Kp_front_wall = new_Kp_front_wall;
+		front_turn_velocity = new_front_turn_velocity;
+		turn_command_saturation = new_turn_command_saturation;
+
 		newnavdata = 0;
 	}
 	
-	if ((LADARdistance[111] < 500)||
-		(LADARdistance[112] < 500)||
-		(LADARdistance[113] < 500)||
-		(LADARdistance[114] < 500)||
-		(LADARdistance[115] < 500))
+	// if ((LADARdistance[111] < 500)||
+	// 	(LADARdistance[112] < 500)||
+	// 	(LADARdistance[113] < 500)||
+	// 	(LADARdistance[114] < 500)||
+	// 	(LADARdistance[115] < 500))
+	// {
+	// 	vref = 0;
+	// }
+
+	// Add declarations for tunable global variables to include:
+	// ref_right_wall - desired distance from right wall, approx 0.8 tiles. You will have
+	// to figure out what distance is read by the LADAR [54] reading when the robot is
+	// placed approximately 0.8 tiles from the wall.
+	// front_error_threshold - maximum distance from a front wall before you stop
+	// wall-following and switch to a front wall-avoidance mode, start with a
+	// front_wall_error that occurs when the robot it 1 tile away for the front wall.
+	// Kp_right_wall - proportional gain for controlling distance of robot to wall,
+	// start with 0.002
+	// Kp_front_wall - proportional gain for turning robot when front wall error is high,
+	// start with 0.001
+	// front_turn_velocity - velocity when the robot starts to turn to avoid
+	// a front wall, use 0.4 to start
+	// forward_velocity - velocity when robot is right wall following, use 1.0 to start
+	// turn_command_saturation - maximum turn command to prevent robot from spinning quickly if
+	// error jumps too high, start with 1.0
+	// These are all ‘knobs’ to tune in lab!
+	// declare other globals that you will need
+
+	// inside RobotControl()
+
+	float front_ladar[5];
+	float right_ladar[5];
+
+	front_ladar[0] = LADARdistance[111];
+	front_ladar[1] = LADARdistance[112];
+	front_ladar[2] = LADARdistance[113];
+	front_ladar[3] = LADARdistance[114];
+	front_ladar[4] = LADARdistance[115];
+
+	right_ladar[0] = LADARdistance[52];
+	right_ladar[1] = LADARdistance[53];
+	right_ladar[2] = LADARdistance[54];
+	right_ladar[3] = LADARdistance[55];
+	right_ladar[4] = LADARdistance[56];
+
+	bubbleSort(front_ladar);
+	bubbleSort(right_ladar);
+	
+	// calculate front wall error (3000.0 - front wall distance)
+	
+	//front_wall_error = 3000.0 - front_ladar[0];
+	right_wall_error = ref_right_wall - right_ladar[0];
+
+		// calculate error between ref_right_wall and right wall measurement
+	
+	// if (fabsf(front_wall_error) > front_error_threshold){
+	// // Change turn command according to proportional feedback control on front error
+	// // use Kp_front_wall here…
+
+	// turn = -Kp_front_wall*front_wall_error;
+	// vref = front_turn_velocity;
+	// }
+	// else {
+	// Change turn command according to proportional feedback control on right error
+	// use Kp_right_wall here
+	// vref = forward_velocity
+
+	turn = -Kp_right_wall*right_wall_error;
+	if (turn > turn_command_saturation)
 	{
-		vref = 0;
+		turn = turn_command_saturation;
 	}
+	vref = newvref;
+	// }
+	// Add code here to saturate the turn command so that it is not larger
+	// than turn_command_saturation or less than -turn_command_saturation
 
 	SetRobotOutputs(vref,turn,0,0,0,0,0,0,0,0);
 
@@ -452,6 +580,10 @@ void RobotControl(void) {
 			case 4: 
 				LCDPrintfLine(1,"COMPASS");
 				LCDPrintfLine(2,"%.1f", compass);
+				break;
+			case 7:
+				LCDPrintfLine(1,"LADARA %.1f %.1f", LADARangle[1], LADARangle[225]);
+				LCDPrintfLine(2,"%.1f %.1f %.1f", LADARangle[172], LADARangle[54], LADARangle[113]);
 				break;
 			case 8: 
 				LCDPrintfLine(1,"GYRO READINGS");
@@ -568,4 +700,3 @@ pose UpdateOptitrackStates(pose localROBOTps, int * flag) {
 	}
 	return localOPTITRACKps;
 }
-
