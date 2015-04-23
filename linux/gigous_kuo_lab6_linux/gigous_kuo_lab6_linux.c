@@ -80,8 +80,8 @@ int main (int argc, char **argv)
 	float DVel = 0;
 	float turn = 0.0;
 	
-	float ref_right_wall;
-	float front_error_threshold;
+	float ref_right_wall = 500;
+	float front_error_threshold = 2500;
 	float Kp_right_wall = 0.002;
 	float Kp_front_wall = 0.001;
 	float front_turn_velocity = 0.4;
@@ -131,8 +131,8 @@ int main (int argc, char **argv)
 		DSPFloats[index] = 0.0;
 	}
 
-	DSPFloats[REF_RIGHT_WALL] = 500;
-	DSPFloats[FRONT_ERROR_THRESHOLD] = 500;
+	DSPFloats[REF_RIGHT_WALL] = 400;
+	DSPFloats[FRONT_ERROR_THRESHOLD] = 2500;
 	DSPFloats[KP_RIGHT_WALL] = 0.002;
 	DSPFloats[KP_FRONT_WALL] = 0.001;
 	DSPFloats[FRONT_TURN_VELOCITY] = 0.25;

@@ -1054,11 +1054,22 @@ Private Sub DrawArena()
     
     For I = 0 To TilesY + 1
         'If (I < TilesX + 1) Then
+            'Tile grid Lines
             pbxArena.Line (xf * TilesY, yf * I)-(xs, yf * I), QBColor(8) 'Horizontal Lines
+            'Astar grid Lines
+            'pbxArena.Line (xf * TilesY, 0.5 * yf + yf * I)-(xs, 0.5 * yf + yf * I), QBColor(13) 'Horizontal Lines
+            
+            pbxArena.CurrentX = xs
+            pbxArena.CurrentY = yf * I
             pbxArena.Print CStr(ytemp - I)
         'End If
         'If (I < TilesY + 1) Then
+            'Tile grid Lines
             pbxArena.Line (xf * I, ys)-(xf * I, yf * TilesY), QBColor(8) 'Vertical Lines
+            'Astar grid Lines
+            'pbxArena.Line (xf * 0.5 + xf * I, ys)-(xf * 0.5 + xf * I, yf * TilesY), QBColor(13) 'Vertical Lines
+
+            pbxArena.CurrentX = xf * I
             pbxArena.CurrentY = xf * (TilesY - 5)
             pbxArena.Print CStr(I - xtemp)
         'End If

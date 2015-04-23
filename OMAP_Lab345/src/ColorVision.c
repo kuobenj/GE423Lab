@@ -392,7 +392,7 @@ void userProcessColorImageFunc_laser(bgr *ptrImage) {
 									current_object = Set_Equivalency(top,left);																
 								}
 								else {
-									current_object = left; 
+									current_object = left;
 								}
 							}
 							break;

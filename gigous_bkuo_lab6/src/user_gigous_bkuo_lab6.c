@@ -48,6 +48,9 @@
 #define FRONT_TURN_VELOCITY 6
 #define TURN_COMMAND_SATURATION 7
 
+// #define GYRO_K ()
+// #define GYRO_K_AMP
+
 extern EDMA3_CCRL_Regs *EDMA3_0_Regs;
 
 volatile uint32_t index;
@@ -76,8 +79,8 @@ extern float switchstate;
 
 float vref = 0;
 float turn = 0;
-float ref_right_wall = 200;
-float front_error_threshold = 200;
+float ref_right_wall = 500;
+float front_error_threshold = 2500;
 float Kp_right_wall = 0.002;
 float Kp_front_wall = 0.001;
 float front_turn_velocity = 0.4;
@@ -86,8 +89,8 @@ float turn_command_saturation = 1.0;
 int newnavdata = 0;
 float newvref = 0;
 float newturn = 0;
-float new_ref_right_wall = 200;
-float new_front_error_threshold = 200;
+float new_ref_right_wall = 500;
+float new_front_error_threshold = 2500;
 float new_Kp_right_wall = 0.002;
 float new_Kp_front_wall = 0.001;
 float new_front_turn_velocity = 0.4;
@@ -133,9 +136,41 @@ volatile int temp_trackableID = -1;
 int trackableID = -1;
 int errorcheck = 1;
 
+
+
+
+unsigned int dummy = 0;
+
+float gyro_zero = 0;
+float gyro_zero_amp = 0;
+
+float gyro_val = 0;
+float gyro_val_amp = 0;
+
+float prev_gyro_val = 0;
+float prev_gyro_val_amp = 0;
+
+float gyro_gain400 = 400.0*(PI/180.0);
+float gyro_gain100 = 100.0*(PI/180.0);
+float gyro_gain = 1.0;
+
+float angle_integral = 0;
+float angle_integral_amp = 0;
+
+float p_current1 = 0;
+float p_old1 = 0;
+float p_current2 = 0;
+float p_old2 = 0;
+
+float v1 = 0;
+float v2 = 0;
+
+float pos_x = 0.0;
+float pos_y = 0.0;
+
 pose UpdateOptitrackStates(pose localROBOTps, int * flag);
 
- void swapNumbers(int i, int j, float *array) {
+void swapNumbers(int i, int j, float *array) {
 
         float temp;
         temp = array[i];
@@ -209,7 +244,7 @@ void ComWithLinux(void) {
 			if (GET_LVDATA_TO_LINUX) {
 
 				// Default
-				ptrshrdmem->DSPSend_size = sprintf(toLinuxstring,"1.0 1.0 1.0 1.0");
+				ptrshrdmem->DSPSend_size = sprintf(toLinuxstring,"%.1f %.1f %.1f %.1f", pos_x, pos_y, angle_integral, angle_integral_amp);
 				// you would do something like this
 				//ptrshrdmem->DSPSend_size = sprintf(toLinuxstring,"%.1f %.1f %.1f %.1f",var1,var2,var3,var4);
 
@@ -399,6 +434,7 @@ Void main()
 long timecount= 0;
 int whichled = 0;
 // This SWI is Posted after each set of new data from the F28335
+//Posted every millisecond
 void RobotControl(void) {
 
 	int newOPTITRACKpose = 0;
@@ -455,6 +491,67 @@ void RobotControl(void) {
 		}
 	}
 
+	if (new_LV_data == 1)
+	{
+		gyro_gain = LVvalue1;
+		vref = LVvalue2;
+		new_LV_data = 0;
+	}
+
+	timecount++;
+	/*gyro code!*/	
+	if(timecount < 3000)//get zero value
+	{
+		// gyro_zero += adcA3*(1.0/2999.0);
+		// gyro_zero_amp += adcA2*(1.0/2999.0);
+		gyro_zero += adcA3;
+		gyro_zero_amp += adcA2;
+		if ((timecount % 100) == 1){
+			LCDPrintfLine(1,"Getting gyro zero");
+			LCDPrintfLine(2,"%d%% complete", timecount*100/3000);
+		}
+		SetRobotOutputs(0,0,0,0,0,0,0,0,0,0);
+		return;
+	}
+	else if (timecount == 3000)
+	{
+		gyro_zero /= 2999.0;
+		gyro_zero_amp /= 2999.0;
+		pos_x = 0.0;
+		pos_y = 0.0;
+		p_old1=p_current1;
+		p_old2=p_current2;
+	}
+
+	gyro_val = gyro_gain*(adcA3 - gyro_zero)*(3.0/4095)*gyro_gain400;
+	gyro_val_amp = gyro_gain*(adcA2 - gyro_zero_amp)*(3.0/4095)*gyro_gain100;
+
+	//finding integral
+
+	angle_integral += (prev_gyro_val+gyro_val)/2.0*.001;
+	angle_integral_amp += (prev_gyro_val_amp+gyro_val_amp)/2.0*.001;
+
+	prev_gyro_val = gyro_val;
+	prev_gyro_val_amp = gyro_val_amp;
+
+	//velocity and position calculations
+	p_current1 = enc1/192.0;
+	p_current2 = enc2/192.0;
+	if(timecount == 3000) {
+		p_old1=p_current1;
+		p_old2=p_current2;
+	}
+
+	v1 = (p_current1-p_old1)/0.001;
+	v2 = (p_current2-p_old2)/0.001;
+
+	pos_x = pos_x + ((v1+v2)/2.0*0.001)*cosf(angle_integral_amp);
+	pos_y = pos_y + ((v1+v2)/2.0*0.001)*sinf(angle_integral_amp);
+
+	p_old1 = p_current1;
+	p_old2 = p_current2;
+
+
 	// Get rid of these two lines when implementing wall following
 	// vref = 0.0;
 	// turn = 0.0;
@@ -468,7 +565,7 @@ void RobotControl(void) {
 		vref = newvref;
 		turn = newturn;
 		ref_right_wall = new_ref_right_wall;
-		front_error_threshold = new_front_turn_velocity;
+		front_error_threshold = new_front_error_threshold;
 		Kp_right_wall = new_Kp_right_wall;
 		Kp_front_wall = new_Kp_front_wall;
 		front_turn_velocity = new_front_turn_velocity;
@@ -527,34 +624,39 @@ void RobotControl(void) {
 	
 	// calculate front wall error (3000.0 - front wall distance)
 	
-	//front_wall_error = 3000.0 - front_ladar[0];
+	front_wall_error = 3000.0 - front_ladar[0];
 	right_wall_error = ref_right_wall - right_ladar[0];
 
-		// calculate error between ref_right_wall and right wall measurement
+	// calculate error between ref_right_wall and right wall measurement
 	
-	// if (fabsf(front_wall_error) > front_error_threshold){
-	// // Change turn command according to proportional feedback control on front error
-	// // use Kp_front_wall here…
+	if (front_wall_error > front_error_threshold){
+		// Change turn command according to proportional feedback control on front error
+		// use Kp_front_wall here…
 
-	// turn = -Kp_front_wall*front_wall_error;
-	// vref = front_turn_velocity;
-	// }
-	// else {
-	// Change turn command according to proportional feedback control on right error
-	// use Kp_right_wall here
-	// vref = forward_velocity
-
-	turn = -Kp_right_wall*right_wall_error;
-	if (turn > turn_command_saturation)
-	{
-		turn = turn_command_saturation;
+		turn = -Kp_front_wall*front_wall_error;
+		vref = front_turn_velocity;
+		dummy += 1;
 	}
-	vref = newvref;
-	// }
-	// Add code here to saturate the turn command so that it is not larger
-	// than turn_command_saturation or less than -turn_command_saturation
+	else {
+		// Change turn command according to proportional feedback control on right error
+		// use Kp_right_wall here
+		//	vref = forward_velocity
 
-	SetRobotOutputs(vref,turn,0,0,0,0,0,0,0,0);
+		// Add code here to saturate the turn command so that it is not larger
+		// than turn_command_saturation or less than -turn_command_saturation
+		turn = -Kp_right_wall*right_wall_error;
+		if (turn > turn_command_saturation)
+		{
+			turn = turn_command_saturation;
+		}
+		else if (turn < -turn_command_saturation)
+		{
+			turn = -turn_command_saturation;
+		}
+		vref = newvref;
+	}
+
+	SetRobotOutputs(vref+LVvalue2,turn,0,0,0,0,0,0,0,0);
 
 	adcA4 = 4096 - adcA4;
 	adcA5 = 4096 - adcA5;
@@ -589,6 +691,29 @@ void RobotControl(void) {
 				LCDPrintfLine(1,"GYRO READINGS");
 				LCDPrintfLine(2,"400md: %.1f 100md: %.1f ", ((adcA2*3.0/4095.0)-1.23)*100*(PI/180.0), ((adcA3*3.0/4095.0)-1.23)*400*(PI/180.0));
 				break;
+			case 9: 
+				LCDPrintfLine(1,"GYRO READINGS");
+				LCDPrintfLine(2,"400md: %.1f 100md: %.1f ", ((adcA2*3.0/4095.0)-1.23)*100*(PI/180.0), ((adcA3*3.0/4095.0)-1.23)*400*(PI/180.0));
+			break;
+			case 10:
+				LCDPrintfLine(1,"1pc: %.1f po: %.1f ", p_current1, p_old1);
+				LCDPrintfLine(2,"2pc: %.1f po: %.1f ", p_current2, p_old2);
+				break;
+			case 11:
+				LCDPrintfLine(1,"gv: %.1f gva: %.1f ", gyro_val, gyro_val_amp);
+				LCDPrintfLine(2,"gg: %.1f", gyro_gain);
+				break;
+			case 12:
+				LCDPrintfLine(1,"dummy: %d", dummy);
+				break;
+			case 13:
+				LCDPrintfLine(1,"X: %.1f, Y: %.1f", pos_x, pos_y);
+				LCDPrintfLine(2,"4: %.1f 1: %.1f ", angle_integral_amp, angle_integral);
+				break;
+			case 14:
+				LCDPrintfLine(1,"frnterr: %.1f", front_wall_error);
+				LCDPrintfLine(2,"thres: %.1f", front_error_threshold);			
+				break;
 			case 15:
 				LCDPrintfLine(1,"turn: %.1f", turn);
 				LCDPrintfLine(2,"vref: %.1f", vref);			
@@ -598,8 +723,6 @@ void RobotControl(void) {
 				break;
 		}
 	}
-
-	timecount++;
 
 }
 
